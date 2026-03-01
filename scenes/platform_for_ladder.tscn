@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cow3ufb0dt3nn"]
+
+[ext_resource type="Texture2D" uid="uid://4rulf8oke638" path="res://assets/object_sprites/pipes/pipe.png" id="1_18dnu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r07xg"]
+size = Vector2(324, 22)
+
+[node name="platform_for_ladder" type="StaticBody2D" unique_id=1328984356]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=46314216]
+scale = Vector2(0.09150797, 0.08033551)
+texture = ExtResource("1_18dnu")
+region_enabled = true
+region_rect = Rect2(3056.4297, 1002.2923, 2893.352, 439.6563)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=545864292]
+scale = Vector2(0.77084357, 0.79176944)
+shape = SubResource("RectangleShape2D_r07xg")

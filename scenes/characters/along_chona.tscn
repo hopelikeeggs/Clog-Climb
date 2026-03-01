@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://cjlm1fqpcx54j"]
+
+[ext_resource type="Texture2D" uid="uid://bfpixbn8ldjbq" path="res://assets/player_sprites/aling chona/idle/1.png" id="1_chmqs"]
+[ext_resource type="Script" uid="uid://cbwx6sreqjolj" path="res://scripts/mang_juan.gd" id="1_jeb2m"]
+[ext_resource type="Texture2D" uid="uid://cjywy0gxfjdsk" path="res://assets/player_sprites/aling chona/idle/2.png" id="2_jeb2m"]
+[ext_resource type="Texture2D" uid="uid://cjn8fj6v2h16d" path="res://assets/player_sprites/aling chona/idle/3.png" id="3_cquu2"]
+[ext_resource type="Texture2D" uid="uid://co7aihwngshfw" path="res://assets/player_sprites/aling chona/idle/4.png" id="4_6ifea"]
+[ext_resource type="Texture2D" uid="uid://cxkegda7vh0bk" path="res://assets/player_sprites/aling chona/run/3.png" id="6_eaq0l"]
+[ext_resource type="Texture2D" uid="uid://bik1l3cjayw52" path="res://assets/player_sprites/aling chona/picking trash (up)/1.png" id="7_5qkjt"]
+[ext_resource type="Texture2D" uid="uid://c3e4gdeeb08cu" path="res://assets/player_sprites/aling chona/picking trash (up)/2.png" id="8_8uhav"]
+[ext_resource type="Texture2D" uid="uid://b131grlrk18ls" path="res://assets/player_sprites/aling chona/picking trash (up)/3.png" id="9_d0spq"]
+[ext_resource type="Texture2D" uid="uid://bfn2xwlhhe7bl" path="res://assets/player_sprites/aling chona/picking trash (up)/4.png" id="10_0bvaw"]
+[ext_resource type="Texture2D" uid="uid://ck47jnnwsjmgt" path="res://assets/player_sprites/aling chona/picking trash (down)/1.png" id="11_naag6"]
+[ext_resource type="Texture2D" uid="uid://ccxfj57w5m2bk" path="res://assets/player_sprites/aling chona/picking trash (down)/2.png" id="12_wxs43"]
+[ext_resource type="Texture2D" uid="uid://dpghkn2d3f3rl" path="res://assets/player_sprites/aling chona/picking trash (down)/3.png" id="13_0lklf"]
+[ext_resource type="Texture2D" uid="uid://bcjdfr7hfeoui" path="res://assets/player_sprites/aling chona/picking trash (down)/4.png" id="14_w2mnh"]
+[ext_resource type="Texture2D" uid="uid://bjnoevavo8umm" path="res://assets/player_sprites/aling chona/picking trash (down)/5.png" id="15_4ad8a"]
+[ext_resource type="Texture2D" uid="uid://y1ba5jibniw1" path="res://assets/player_sprites/aling chona/picking trash (down)/6.png" id="16_6lk52"]
+[ext_resource type="Texture2D" uid="uid://cppawtd05tja6" path="res://assets/player_sprites/aling chona/run/4.png" id="17_v0qil"]
+[ext_resource type="Texture2D" uid="uid://drcg1xr6jwsxm" path="res://assets/player_sprites/aling chona/run/5.png" id="18_odjlq"]
+[ext_resource type="Texture2D" uid="uid://crh3g5r47o2b8" path="res://assets/player_sprites/aling chona/run/6.png" id="19_2k00x"]
+[ext_resource type="Texture2D" uid="uid://37exnsfo7ink" path="res://assets/player_sprites/aling chona/run/7.png" id="20_1ee7n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3r4q8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_chmqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jeb2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cquu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6ifea")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_eaq0l")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_5qkjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8uhav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d0spq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0bvaw")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_naag6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wxs43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_0lklf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_w2mnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4ad8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6lk52")
+}],
+"loop": true,
+"name": &"pick_up_trash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_eaq0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_v0qil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_odjlq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_2k00x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_1ee7n")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t8awf"]
+radius = 6.0
+height = 112.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yg3x1"]
+size = Vector2(76.875, 22.125)
+
+[node name="along_chona" type="CharacterBody2D" unique_id=1785045198]
+script = ExtResource("1_jeb2m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=507954349]
+position = Vector2(10.000001, -12)
+scale = Vector2(0.05084229, 0.06689453)
+sprite_frames = SubResource("SpriteFrames_3r4q8")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1812112191]
+shape = SubResource("CapsuleShape2D_t8awf")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1712532624]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=722219150]
+position = Vector2(0, 44)
+shape = SubResource("RectangleShape2D_yg3x1")
+debug_color = Color(1.8049032e-07, 0.1455844, 0.17680845, 0.41960785)
+
+[node name="runsound" type="AudioStreamPlayer2D" parent="." unique_id=1939581120]
+
+[node name="jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=688580678]
+
+[node name="pickupsound" type="AudioStreamPlayer2D" parent="." unique_id=596302756]

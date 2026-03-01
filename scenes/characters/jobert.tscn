@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://cwcue5fm8e08d"]
+
+[ext_resource type="Script" uid="uid://cbwx6sreqjolj" path="res://scripts/mang_juan.gd" id="1_sxv3q"]
+[ext_resource type="Texture2D" uid="uid://ch1uk7dd8r3w4" path="res://assets/player_sprites/jobert/idle/1.png" id="2_yt4bi"]
+[ext_resource type="Texture2D" uid="uid://dhiqgufh4jxwv" path="res://assets/player_sprites/jobert/idle/2.png" id="3_nnyo8"]
+[ext_resource type="Texture2D" uid="uid://bg0lmr8x8rlqe" path="res://assets/player_sprites/jobert/idle/3.png" id="4_8q87t"]
+[ext_resource type="Texture2D" uid="uid://dm0ifinyn06po" path="res://assets/player_sprites/jobert/idle/4.png" id="5_1e5cr"]
+[ext_resource type="Texture2D" uid="uid://b1pt0gkq1810d" path="res://assets/player_sprites/jobert/run/Untitled106_Restored2_20260118193129.png" id="6_b8bdr"]
+[ext_resource type="Texture2D" uid="uid://dg6k5nvb6v6rv" path="res://assets/player_sprites/jobert/picking trash (up)/Untitled106_20260115231947.png" id="7_vkiv1"]
+[ext_resource type="Texture2D" uid="uid://cgbus7855k1w4" path="res://assets/player_sprites/jobert/picking trash (up)/Untitled106_20260115232444.png" id="8_3wid4"]
+[ext_resource type="Texture2D" uid="uid://dbakjjh4ehdrn" path="res://assets/player_sprites/jobert/picking trash (up)/Untitled106_20260115232615.png" id="9_ciq0i"]
+[ext_resource type="Texture2D" uid="uid://c1odbgcvpnf3u" path="res://assets/player_sprites/jobert/picking trash (up)/Untitled106_20260115232729.png" id="10_f11ga"]
+[ext_resource type="Texture2D" uid="uid://dcpigdsftv5fg" path="res://assets/player_sprites/jobert/picking up trash (down)/1.png" id="11_kb0ne"]
+[ext_resource type="Texture2D" uid="uid://c33ar6ejpicyk" path="res://assets/player_sprites/jobert/picking up trash (down)/2.png" id="12_wj1ss"]
+[ext_resource type="Texture2D" uid="uid://c7ucku3b8sbmo" path="res://assets/player_sprites/jobert/picking up trash (down)/3.png" id="13_gf8jn"]
+[ext_resource type="Texture2D" uid="uid://t58ecjapmef" path="res://assets/player_sprites/jobert/picking up trash (down)/4.png" id="14_cwadc"]
+[ext_resource type="Texture2D" uid="uid://oel6i3vxha7v" path="res://assets/player_sprites/jobert/picking up trash (down)/5.png" id="15_luijj"]
+[ext_resource type="Texture2D" uid="uid://ddce22uajnl7o" path="res://assets/player_sprites/jobert/picking up trash (down)/6.png" id="16_aa5ct"]
+[ext_resource type="Texture2D" uid="uid://c1yia3d2d6k27" path="res://assets/player_sprites/jobert/run/Untitled106_Restored2_20260118181949.png" id="17_e1djf"]
+[ext_resource type="Texture2D" uid="uid://rhqssmmuhqgb" path="res://assets/player_sprites/jobert/run/Untitled106_Restored2_20260118183622.png" id="18_5w3si"]
+[ext_resource type="Texture2D" uid="uid://dakge0pmnvu7m" path="res://assets/player_sprites/jobert/run/Untitled106_Restored2_20260118185432.png" id="19_kgpsi"]
+[ext_resource type="Texture2D" uid="uid://bpe825au3xswx" path="res://assets/player_sprites/jobert/run/Untitled106_Restored2_20260118191808.png" id="20_l12kn"]
+[ext_resource type="Texture2D" uid="uid://bkc8c5rhjtmfl" path="res://assets/player_sprites/jobert/run/Untitled106_Restored2_20260118191824.png" id="21_ofm1f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ghsx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yt4bi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nnyo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8q87t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1e5cr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_b8bdr")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_vkiv1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3wid4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ciq0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_f11ga")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_kb0ne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wj1ss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gf8jn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cwadc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_luijj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_aa5ct")
+}],
+"loop": true,
+"name": &"pick_up_trash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_e1djf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_5w3si")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_kgpsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_l12kn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ofm1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b8bdr")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t8awf"]
+radius = 7.0
+height = 114.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yg3x1"]
+size = Vector2(75.75, 23.625)
+
+[node name="jobert" type="CharacterBody2D" unique_id=1785045198]
+script = ExtResource("1_sxv3q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=507954349]
+position = Vector2(7, 1)
+scale = Vector2(0.050354008, 0.06640625)
+sprite_frames = SubResource("SpriteFrames_8ghsx")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1812112191]
+position = Vector2(0, 11)
+shape = SubResource("CapsuleShape2D_t8awf")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1712532624]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=722219150]
+position = Vector2(0, 56)
+shape = SubResource("RectangleShape2D_yg3x1")
+debug_color = Color(1.8049032e-07, 0.1455844, 0.17680845, 0.41960785)
+
+[node name="runsound" type="AudioStreamPlayer2D" parent="." unique_id=1939581120]
+
+[node name="jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=688580678]
+
+[node name="pickupsound" type="AudioStreamPlayer2D" parent="." unique_id=596302756]

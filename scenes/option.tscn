@@ -1,0 +1,201 @@
+[gd_scene format=4 uid="uid://drtq8b4hmacq4"]
+
+[ext_resource type="Script" uid="uid://bjb8kjwyj4k6s" path="res://scripts/option.gd" id="1_dvhhf"]
+[ext_resource type="Texture2D" uid="uid://bgne8bconhog2" path="res://assets/container_sprites/Untitled130_20260129091924.png" id="1_u8bav"]
+[ext_resource type="Texture2D" uid="uid://ckf27mek4cdre" path="res://assets/Button_sprite/new_buttons/mute_sfx.png" id="2_dvhhf"]
+[ext_resource type="Texture2D" uid="uid://be4elj21wola8" path="res://assets/Button_sprite/new_buttons/mute_sfx_hover.png" id="3_2tp8c"]
+[ext_resource type="Script" uid="uid://cxb6orxf7k0wi" path="res://scripts/mute_music.gd" id="4_dgade"]
+[ext_resource type="Texture2D" uid="uid://dk7fmlf1k2xfi" path="res://assets/Button_sprite/new_buttons/mute_music.png" id="5_qrda0"]
+[ext_resource type="Texture2D" uid="uid://6srk6gsrdexs" path="res://assets/Button_sprite/new_buttons/Exit_button.png" id="6_dgade"]
+[ext_resource type="Texture2D" uid="uid://mpeibvpxslwg" path="res://assets/Button_sprite/new_buttons/mute_music-red.png" id="6_o25ia"]
+[ext_resource type="Script" uid="uid://bqvum66chtru0" path="res://scripts/mute_sfx.gd" id="7_luuyq"]
+[ext_resource type="Texture2D" uid="uid://b3oxw22foqyfd" path="res://assets/Button_sprite/new_buttons/Exit_button_pressed.png" id="7_qrda0"]
+[ext_resource type="Texture2D" uid="uid://llk487jamqrb" path="res://assets/Button_sprite/new_buttons/fullscreen.png" id="8_qu1n4"]
+[ext_resource type="Texture2D" uid="uid://bppuoko4nel3" path="res://assets/Button_sprite/new_buttons/fullscreen_toggled.png" id="9_s31qq"]
+[ext_resource type="Script" uid="uid://c0siam1ixtsn2" path="res://scripts/fullscreen_control.gd" id="10_bwauh"]
+[ext_resource type="Script" uid="uid://118rtm5df5nh" path="res://scripts/audio_control.gd" id="11_4phf4"]
+[ext_resource type="PackedScene" uid="uid://pg23r54v6h6g" path="res://scenes/install_sounds.tscn" id="12_7grly"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3o4og"]
+_surfaces = [{
+"2d": true,
+"aabb": AABB(-157, -160, 0, 331.5, 318.1, 0),
+"attribute_data": PackedByteArray("SCxgPgAAAAB9bFg+mpkZPAu4Uz6amRk8T39EPuJ6hD1Pf0Q+mpmpPUo5JT4AAMA9MgcePgAAwD16fuM9ZmYWPvww2z1mZhY+COmuPc3MXD4K16M9zcxcPtQfsT2uR4U+1B+xPY/CLz/Z+5o9KVw5P9n7mj2Pwj8/1B+xPQAARD/NzMw9hetVP83MzD3ielg/xALuPRWuXz/EAu49o3BhP1o3GD49Cms/WjcYPnsUbD/K3lc+MzN3P8reVz5mZng/QlB2PlK4ej9CUHY+AAB8P0HZ+z4ehX0/Qdn7PuJ6fj+B0Uc/uB57P3TBST8AAHw/5nVOPwAAfD9EElY/zcx4P127Vz/NzHg/aVRbP9ajdD9pVFs/KlxzP874YT8zM28/MJBjPzMzbz+u3Ws/zcxkP6fVbD/NzGQ/xg9zP83MVD/AB3Q/zcxUP199dz8zMz8/Mrx4PzMzPz9JWHU/mpktPwPudD+amS0/A+50P9ajUD5HtWU/16MAPke1ZT/rUfg9OoZXP83MrD36I1Y/zcysPesGUz8AAAA96wZTP1K4njxMkU8/kMJ1O0yRTz8AAAAA8eI8PwAAAAAyvDg/cT0KPDYhKD+amRk8NiEoP83MTDzGeeg+zcxMPMZ56D6amRk8QBecPpqZGTxaN5g+CtcjOg=="),
+"format": 34393296913,
+"index_count": 180,
+"index_data": PackedByteArray("AAA9ADwAPAA7ADoAOQA4ADcANwA2ADUANAAzADIAMQAwAC8ALgAtACwALAArACoAKQAoACcAJwAmACUAJQAkACMAIgAhACAAHwAeAB0AHAAbABoAGgAZABgAGAAXABYAFgAVABQAFAATABIAEgARABAADwAOAA0ACwAKAAkACQAIAAcABwAGAAUABAADAAIAAQAAADwANwA1ADQANAAyADEAMQAvAC4ALAAqACkAKQAnACUAJQAjACIAIgAgAB8AHwAdABwAHAAaABgAGAAWABQAFAASABAADwANAAwACwAJAAcABwAFAAQABAACAAEAAQA8ADoAOQA3ADQAMQAuACwALAApACUAIgAfABwAHAAYABQAFAAQAA8ADAALAAcABAABADoAOQA0ADEAMQAsACUAJQAiABwAHAAUAA8ADwAMAAcABwAEADoAOgA5ADEAMQAlABwAHAAPAAcABwA6ADEAMQAcAAcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 62,
+"vertex_data": PackedByteArray("AADQwgAAIMOamdXCAAAdwwAA2cIAAB3DAADkws1MC8MAAOTCAIAFw5qZ+sIAAALDzcz/wgAAAsNm5g/DAADiwmZmEcMAAOLCZmYZwwAAtsJmZhvDAAC2wgAAGcNmZpnCAAAZw8zMbkIAAB3DZmaPQgAAHcNmZp9CAAAZwwAAqkIAABTDzMzWQgAAFMM0M91CAAAOwzQz70IAAA7DmJnzQgAAAsPMzAVDAAACw5oZB0MAANbCAAAVQwAA1sIAgBZDAADAwmZmGUMAAMDCAAAbQwAAQMBm5hxDAABAwJoZHkOYmc9CZuYZQzQz1UIAABtDzMziQgAAG0PMzPhCAAAXQ5iZ/UIAABdDAAAEQ8zMEUMAAARDNDMQQ5qZDUMAAAtDZuYPQwAAC0Nm5htDAAD8QsxMHUMAAPxCzEwmQwAA1EI0sydDAADUQjSzLEMAAJ5CAIAuQwAAnkKamSlDAABkQgAAKUMAAGRCAAApQ5qZvcIAABNDmpnvwgAAE0NmZvLCAAD9QgAABcMAAPlCAAAFwwAA8EIAABbDAADwQs3MGcMAAOZCzcwewwAA5kIAACDDAACwQgAAIMMAAKRCzUwdwwAAaEIAAB3DAABoQgAAHMMAAIjBAAAcwwAAiMEAAB3DZmaQwgAAHcMAAJbCzcwfww==")
+}]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_qp5if"]
+grow_begin = -6.0
+grow_end = -13.0
+thickness = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_87416"]
+bg_color = Color(0.19215687, 0.38431373, 0.22352941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77hlh"]
+bg_color = Color(0.47058824, 0.5882353, 0.28627452, 1)
+
+[node name="option" type="Control" unique_id=1999696204]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dvhhf")
+
+[node name="Panel" type="Panel" parent="." unique_id=1783570645]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -130.0
+offset_right = 172.0
+offset_bottom = 175.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="op_sprite" type="MeshInstance2D" parent="Panel" unique_id=617798906]
+texture_filter = 1
+position = Vector2(161.17494, 131.7197)
+scale = Vector2(1.3514328, 1.4154353)
+mesh = SubResource("ArrayMesh_3o4og")
+texture = ExtResource("1_u8bav")
+
+[node name="mute_music" type="TextureButton" parent="Panel" unique_id=1188182178]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 24.5
+offset_right = 2069.0
+offset_bottom = 2072.5
+scale = Vector2(0.02949355, 0.028781777)
+toggle_mode = true
+texture_normal = ExtResource("2_dvhhf")
+texture_pressed = ExtResource("3_2tp8c")
+script = ExtResource("4_dgade")
+audio_bus_name = "Music"
+
+[node name="exit" type="TextureButton" parent="Panel" unique_id=1815643302]
+layout_mode = 0
+offset_left = 309.99997
+offset_top = -53.0
+offset_right = 2358.0
+offset_bottom = 1995.0
+scale = Vector2(0.02949355, 0.028781777)
+toggle_mode = true
+texture_normal = ExtResource("6_dgade")
+texture_pressed = ExtResource("7_qrda0")
+texture_hover = ExtResource("7_qrda0")
+
+[node name="mute_SFX" type="TextureButton" parent="Panel" unique_id=1969123289]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 84.5
+offset_right = 2069.0
+offset_bottom = 2132.5
+scale = Vector2(0.02949355, 0.028781777)
+toggle_mode = true
+texture_normal = ExtResource("5_qrda0")
+texture_pressed = ExtResource("6_o25ia")
+script = ExtResource("7_luuyq")
+audio_bus_name = "SFX"
+
+[node name="Fullscreen_control" type="TextureButton" parent="Panel" unique_id=961161373]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 144.5
+offset_right = 2069.0
+offset_bottom = 2192.5
+scale = Vector2(0.02949355, 0.028781777)
+toggle_mode = true
+texture_normal = ExtResource("8_qu1n4")
+texture_pressed = ExtResource("9_s31qq")
+script = ExtResource("10_bwauh")
+
+[node name="Audio_control" type="HSlider" parent="Panel" unique_id=510796135]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 110.5
+offset_right = 317.0
+offset_bottom = 126.5
+theme_override_styles/slider = SubResource("StyleBoxLine_qp5if")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_87416")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_77hlh")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("11_4phf4")
+audio_bus_name = "SFX"
+
+[node name="Audio_control2" type="HSlider" parent="Panel" unique_id=1753285542]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 50.5
+offset_right = 317.0
+offset_bottom = 66.5
+theme_override_styles/slider = SubResource("StyleBoxLine_qp5if")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_87416")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_77hlh")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("11_4phf4")
+audio_bus_name = "Music"
+
+[node name="music_lbl" type="Label" parent="Panel" unique_id=1124870693]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 29.5
+offset_right = 230.0
+offset_bottom = 55.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Musci"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX_lbl" type="Label" parent="Panel" unique_id=999167649]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 93.5
+offset_right = 230.0
+offset_bottom = 119.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fullscreen_lbl" type="Label" parent="Panel" unique_id=1643476525]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 164.5
+offset_right = 178.0
+offset_bottom = 190.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "FullScreen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstallSounds" parent="Panel" unique_id=70294679 instance=ExtResource("12_7grly")]
+root_path = NodePath("../..")
+
+[connection signal="pressed" from="Panel/mute_music" to="Panel/mute_music" method="_on_pressed"]
+[connection signal="pressed" from="Panel/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Panel/mute_SFX" to="Panel/mute_SFX" method="_on_pressed"]
+[connection signal="toggled" from="Panel/Fullscreen_control" to="Panel/Fullscreen_control" method="_on_toggled"]
+[connection signal="value_changed" from="Panel/Audio_control" to="Panel/Audio_control" method="_on_value_changed"]
+[connection signal="value_changed" from="Panel/Audio_control2" to="Panel/Audio_control2" method="_on_value_changed"]

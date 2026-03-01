@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bqkfwi5eru4ly"]
+
+[ext_resource type="VideoStream" uid="uid://dvm556dqy4k28" path="res://assets/cutscene.ogv" id="1_0sipp"]
+[ext_resource type="Script" uid="uid://48qyvspg4866" path="res://scripts/cutscene.gd" id="1_2bm7f"]
+[ext_resource type="Texture2D" uid="uid://bflc4c47tbi1p" path="res://assets/Button_sprite/new_buttons/skip_button_pressed.png" id="2_2bm7f"]
+[ext_resource type="Script" uid="uid://bxpi5tfydrtj8" path="res://scripts/cutscene_video.gd" id="3_bb0yx"]
+[ext_resource type="Texture2D" uid="uid://bi1q04ca1q86l" path="res://assets/Button_sprite/new_buttons/skip_button.png" id="3_fs8wb"]
+
+[node name="cutscene" type="Control" unique_id=1729309687]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2bm7f")
+
+[node name="CutsceneVideo" type="VideoStreamPlayer" parent="." unique_id=2112592445]
+layout_mode = 0
+offset_left = -297.0
+offset_top = -219.0
+offset_right = 1467.0
+offset_bottom = 861.0
+stream = ExtResource("1_0sipp")
+script = ExtResource("3_bb0yx")
+
+[node name="CutsceneCamera" type="Camera2D" parent="CutsceneVideo" unique_id=1659246713]
+position = Vector2(881, 538)
+zoom = Vector2(0.65, 0.6)
+
+[node name="Label" type="Label" parent="." unique_id=1566823789]
+layout_mode = 0
+offset_left = -248.0
+offset_top = 720.0
+offset_right = -98.0
+offset_bottom = 767.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "PRESS SKIP "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1037861788]
+layout_mode = 0
+offset_left = -270.0
+offset_top = 734.0
+offset_right = 1650.0
+offset_bottom = 1814.0
+scale = Vector2(0.12796307, 0.11776143)
+texture_normal = ExtResource("2_2bm7f")
+texture_pressed = ExtResource("3_fs8wb")
+texture_hover = ExtResource("3_fs8wb")
+
+[node name="MainCamera" type="Camera2D" parent="." unique_id=1942435774]
+position = Vector2(579, 325)
+
+[connection signal="finished" from="CutsceneVideo" to="CutsceneVideo" method="_on_finished"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
