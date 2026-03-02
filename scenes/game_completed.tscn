@@ -1,0 +1,99 @@
+[gd_scene format=4 uid="uid://bg4al2330doyb"]
+
+[ext_resource type="Script" uid="uid://bo7ojw8w8mg0g" path="res://scripts/game_completed.gd" id="1_6u3jn"]
+[ext_resource type="Texture2D" uid="uid://dkp7qui7g34jl" path="res://assets/container_sprites/Untitled129_20260129091905.png" id="2_6u3jn"]
+[ext_resource type="Texture2D" uid="uid://cv28o3kja3m1i" path="res://assets/Button_sprite/Untitled107_20260125232140.png" id="3_f6knk"]
+[ext_resource type="Texture2D" uid="uid://c0g2ovwhtnhvq" path="res://assets/Button_sprite/Untitled107_20260125232132.png" id="4_w8kah"]
+[ext_resource type="Texture2D" uid="uid://b82qrkmkisnnh" path="res://assets/Button_sprite/new_buttons/restart.png" id="5_3mcjx"]
+[ext_resource type="Texture2D" uid="uid://digl051a2nwtw" path="res://assets/Button_sprite/new_buttons/restart_pressed.png" id="6_xm0uq"]
+[ext_resource type="Texture2D" uid="uid://0ypt4uceacyj" path="res://assets/Button_sprite/new_buttons/back_pause.png" id="7_dle1l"]
+[ext_resource type="PackedScene" uid="uid://pg23r54v6h6g" path="res://scenes/install_sounds.tscn" id="8_81t5l"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_o57t2"]
+_surfaces = [{
+"2d": true,
+"aabb": AABB(-958, -472, 0, 1915, 940, 0),
+"attribute_data": PackedByteArray("IiLePrrygD0iIt4+/iuEPQAA3j6hvYQ9xpLJPqG9hD36xbQ+5DiOPYwlqz7kOI49d3enPm2rlD13d6c+ss6VPXE9oD6yzpU9d3ePPmZbpT13d48+w9+mPXsUjj7D36Y9VVWNPn+QoT1VVY0+O1eePWZmij7gppg9ZmaKPieelT0Urns+DX+bPUREeD4Nf5s9iYhsPu0ltD3bQGs+7SW0PWPJYz4ofdI9PgpjPih90j0pXFc+ss4VPlyPVj6yzhU+3t1VPvU+Hj7e3VU+3f4gPnd3Vz4K1yM+7+5WPmZbJT7v7lY+ZZ0rPmZmDj6SdS4+ZmYOPkxoLz4XSwo+TGgvPs3MBD6TVCs+zcwEPvG3KT4fhes98bcpPqDT3j0ekCw+rkfRPR6QLD53d8c9Mz40Pkfhsj0b/jY+4XqsPRv+Nj6MJZc9dq48Pum0kT12rjw+exROPYe/TT5gLEk9h79NPpNfHD0k61w+FK4XPSTrXD5LftE8kKxzPlnyyzyQrHM+7+5uPE4xij7v7m48n/+KPgvXIzydK48+VVUVPJ0rjz5mZuY7ss6VPp020DuyzpU+exSuO1LDnz5Z8os7UsOfPquqqjuKRqI+q6qqO6yUqD4s+QU8E+WsPr9Y8jvWubI+Jb/YO9a5sj4AAAA8pVq7PgAAADxq+Bs/7+7uO2r4Gz/v7u47yFApP4mIiDsIJCs/PgpXOwgkKz/6xRI7NfwtP22g0zo1/C0/iYiIOrLONT+JiIg6CQM4PwAAgDvHcTw/7+5uOxdsQT/v7m47lvxCPyW/GDzD30Y/MzMzPOUMSj8zMzM8n/9KPwAAgDxMc1A/AACAPHk1UT8iIuI8pURZPyIi4jw30Fk/MzMzPfqvYD8zMzM9y/hgP83MbD2yw2Q/zcxsPZYSZT9mZpY9seRnP2Zmlj2UM2g/Y8m/Pfxtaj/e3cU9/G1qPyIi0j1fTWw/IiLSPZm6bD9jyd89KkZtPz4K5z0qRm0/ERHxPQdFbj8REfE9QLJuP3TaCD5Asm4/3t0NPjtMbT93d0c+JPZtP3d3Rz7kOG4/iYigPi+sbj+JiKA+7+5uP2ZmMD/v7m4//WJePypGbT9Bp18/QLJuP6RwYj9Asm4/WfJmPx6QbD/yi2c/HpBsP1VVaT8NdGo/7FFsP5Q+aT+W/Gw/lD5pP/1ibz/PlWc/7+5vP8+VZz/e3XI/UPpkP4wlcz9Q+mQ/MzN2P2gvYT+1gXY/aC9hP6RweT/HcVw/mpl5P8dxXD+JiHw/VVVVP+m0fD9VVVU/gk5+P+/uTj/hen4/7+5OP2Zmfz8sD0g/mpl/PywPSD+amX8/chynPhERfz+KUaM+ERF/P+0llD6JiH4/BluQPomIfj/kQ48+gk59P1nnij7kF30/WeeKPmZmfD/Qf4U+ZmZ8P3P7gz6rqno/js12Pquqej/Wz3Q+RER4P8S+Yz5ERHg/f5tiPry7dT8PPVU+vLt1P8oZVD5mZnA//xVCPmZmcD902kA+wvVoP+0lND7v7mc/7SU0PmZmZj+Sai0+ZmZmP6u1Kz4AAGI/q6oqPrkeXz+rqio+IiJePwZQLz4AAE4/ZZ0rPgAARj9lnSs+AABGP6uqKj4fhUU/q6oqPrkeRT8iIiI+PgpFPyIiIj7v7kQ/yFsaPu/uRD+Hyg4+IiJEP115AD4iIkQ/60b3PYmIQj8/9NQ9iYhCP0DI0D2JiEA/YCG4PYmIQD9KqrU9zcw/PwZbsD2MJT8/BluwPd7dPT9R5KI93t09P5jbnz1ERDw/JOCbPUREPD+w+pk9WfI4P7LOlT2F6zU/ss6VPacNND/D36Y9k18zP8Pfpj13dy0/JOCbPXd3LT8lypk9iYgkP+NOkD2JiCQ/b2mOPUREFj8Vo4Y9REQWP6G9hD0="),
+"format": 34393296913,
+"index_count": 528,
+"index_data": PackedByteArray("AACxALAAsACvAK4ArgCtAKwAqgCpAKgAqACnAKYApgClAKQAowCiAKEAoACfAJ4AngCdAJwAnACbAJoAmQCYAJcAlwCWAJUAlQCUAJMAkwCSAJEAkQCQAI8AjgCNAIwAiwCKAIkAiQCIAIcAhwCGAIUAhQCEAIMAggCBAIAAfwB+AH0AfQB8AHsAegB5AHgAeAB3AHYAdgB1AHQAdABzAHIAcgBxAHAAcABvAG4AbgBtAGwAawBqAGkAaQBoAGcAZgBlAGQAYwBiAGEAYABfAF4AXABbAFoAWABXAFYAVQBUAFMAUwBSAFEAUQBQAE8ATwBOAE0ATQBMAEsASgBJAEgARwBGAEUARQBEAEMAQwBCAEEAQAA/AD4APQA8ADsAOgA5ADgAOAA3ADYANgA1ADQANAAzADIAMQAwAC8ALgAtACwALAArACoAKgApACgAKAAnACYAJQAkACMAIwAiACEAHgAdABwAHAAbABoAGgAZABgAGAAXABYAFgAVABQAFAATABIAEgARABAAEAAPAA4ADgANAAwACgAJAAgABwAGAAUABAADAAIAAQAAALAAsACuAKwAqgCoAKYApgCkAKMAowChAKAAoACeAJwAnACaAJkAkwCRAI8AjgCMAIsAiwCJAIcAhwCFAIMAggCAAH8AfwB9AHsAegB4AHYAdgB0AHIAcgBwAG4AbgBsAGsAawBpAGcAZgBkAGMAYwBhAGAAYABeAF0AXABaAFkAWABWAFUAVQBTAFEAUQBPAE0ATQBLAEoASgBIAEcARwBFAEMAQwBBAEAAPQA7ADoAOgA4ADYANgA0ADIAMQAvAC4ALgAsACoAKgAoACYAJQAjACEAGgAYABYAFgAUABIAEgAQAA4ADgAMAAsACgAIAAcABwAFAAQAAgABALAAsACsAKsAqgCmAKMAowCgAJwAkwCPAI4AjgCLAIcAhwCDAIIAggB/AHsAegB2AHIAcgBuAGsAawBnAGYAZgBjAGAAYABdAFwAXABZAFgAWABVAFEAUQBNAEoASgBHAEMAPgA9ADoAOgA2ADIAMQAuACoAKgAmACUAJQAhACAAGgAWABIAEgAOAAsACgAHAAQABAACALAAqwCqAKMAowCcAJkAlQCTAI4AjgCHAIIAggB7AHoAegByAGsAawBmAGAAYABcAFgAWABRAEoASgBDAEAAPgA6ADIAMQAqACUAJQAgAB8AHAAaABIAEgALAAoACgAEALAAqwCjAJkAlQCOAIIAggB6AGsAawBgAFgAWABKAEAAPgAyADEAMQAlAB8AHAASAAoACgCwAKsAqwCZAJcAlQCCAGsAawBYAEAAQAA+ADEAMQAfAB4AHAAKAKsAlwCVAGsAawBAADEAMQAeABwAHACrAJcAlwBrADEAMQAcAJcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 178,
+"vertex_data": PackedByteArray("AAD+wgAA7MMAAP7CZibrwwAA/8IAAOvDmBlMwwAA68PMDI3DAIDow5oZn8MAgOjDAACmw83M5sMAAKbDAIDmw8yMs8MAgObDAADTw2Zm4sMAANPDAADiw5qZ1cMAAOLDAADXw2Zm48MAANfDAEDkwwCA3MMAwOXDAIDcw82M5sPNDPTDAADlwwBA98MAAOXDACABxACA3sOauQHEAIDew5o5BcQAgNbDM5MFxACA1sPNDAvEAAC/w81sC8QAAL/DAMALxM2MusMAwAvEmhm5wwAAC8SambfDAEALxM3MtsMAQAvEAICzwwBALcQAALLDAEAtxACAscPNLC/EAICxwwDAMcRmprPDAMAxxACAtMPNzDjEAIC0w2bGO8QAALPDM/M+xAAAs8MAQEHEM/OuwzMTRsQAgK3DM5NHxACArcMzk0zEAICqw5rZTcQAgKrDmtlXxACAocPNbFjEAIChw82sXcQAgJnDmjlexACAmcOauWPEAICNw80MZMQAgI3DAABpxACAeMMAAGnEzMx2wzMza8QAAG7DAKBrxAAAbsMAoGzEAABgwzPzbMQAAGDDM3NtxAAAS8Mz823EAABLwwCAbcQ0s0XDAIBtxGZmOMMzE2zEzEwvwzNzbMQAACPDM9NsxAAAI8MAQGzEzMwQwwBAbMQAAOxCAIBsxAAA7EIAgGzEzEwuQwAAbsQAADZDzWxuxAAANkPN7G7EAABCQ5o5b8QAAEJDAIBvxAAAY0MAgG/EzExsQwAgbsQAAH9DAEBuxAAAikMAQG7EzEyNQ2aGa8QAgJVDAMBqxDQznEMAwGrENDOeQwCAaMQ0s6lDAIBoxMxMq0MAwGLEzEy8QwDAYsQ0c71DAABbxDTzy0MAAFvEzIzMQwBAVMTMjNRDAEBUxDQz1UMAwEzEZibbQwDATMTMzNtDzQxDxACA4EMAoEHEAIDgQwDAPsQ0c+RDAMA+xJpZ5UPNjDvEAIDmQ5rZOcQAgOZDAIA3xJqZ6EMAgDfEAIDpQ5rZL8QAgOlDAIAtxMyM5kMAgBLENPPnQwCAEsQAgOhDAACzwzRz6UMAALPDAADqQwCAtUMAAOpDmvkwRACA5kOaWTNEAIDpQzSTOEQAgOlDZgZBRAAA5UNmJkJEAADlQwCARUTMjOBDmhlLRAAA3kOaWUxEAADeQ5rZUEQAgNpDAOBRRACA2kMAYFdEAADVQ2bmV0QAANVDAKBdRAAAzUM0M15EAADNQzSzY0QAAMNDAABkRAAAw0MAgGlEAAC0QzTTaUQAALRDNNNsRACApkNmJm1EAICmQwDgbkQAAJhDAEBvRAAAmEMAQG9EAIA7wwBAbkQAgEPDAEBuRACAY8MAQG1EAIBrwwBAbUTMzG3DNPNqRAAAd8PMjGpEAAB3wwBAaUQzM4HDAEBpRM3MgsMAAGZEmtmLwwAAZkRm5ozDAIBhRGbmlcMAgGFEAICWwwDAXETNjJ3DAMBcRGYmnsMAwFJEZqanwwDAUkTNTKjDzMxERAAAr8MA4EJEAACvwwAAQETNjLLDAABARDNzs8MAwDdEAAC0w5pZMkQAALTDAIAwRM2MscMAQBJEAICzwwBAA0QAgLPDAEADRAAAtMOaWQJEAAC0w5qZAUQAgLjDNHMBRACAuMMAQAFEmpm8wwBAAUQzs8LDAID/QwBAysMAgP9DzczMwwCA+UOa2dXDAID5QzPz1sMAAPJDM3PdwwAA8kOaGd7DAEDvQwCA38PMzOxDAIDfwwAA6EPNDOPDAADoQ5rZ48MAAOJDZubkwwAA4kNmZuXDzIzVQwCA5sM0M8pDAIDmwzQzw0MAAOLDaKbAQwAA4sMAgKpDZubkwwCAqkMzc+XDAACJQzPz58MAAIlDM3PowwAAJ0MAgOrDAAAnQwAA68M=")
+}]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5i6hl"]
+load_path = "res://.godot/imported/back_pause_pressed.png-9b6f6cbec7a115af2d8c9bc15322e1d0.ctex"
+
+[node name="game_completed" type="Control" unique_id=580554472]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6u3jn")
+
+[node name="Panel" type="Panel" parent="." unique_id=2070382123]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.0
+offset_top = -119.0
+offset_right = 290.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="over_container" type="MeshInstance2D" parent="Panel" unique_id=1435436693]
+position = Vector2(283, 84.84189)
+scale = Vector2(0.32916662, 0.31444046)
+mesh = SubResource("ArrayMesh_o57t2")
+texture = ExtResource("2_6u3jn")
+
+[node name="back_menu" type="TextureButton" parent="Panel" unique_id=404789632]
+layout_mode = 0
+offset_left = 56.999977
+offset_top = 130.0
+offset_right = 2105.0
+offset_bottom = 2178.0
+rotation = -0.002303563
+scale = Vector2(0.059101205, 0.055581227)
+texture_normal = ExtResource("3_f6knk")
+texture_pressed = ExtResource("4_w8kah")
+texture_hover = ExtResource("4_w8kah")
+
+[node name="restart" type="TextureButton" parent="Panel" unique_id=1810304842]
+layout_mode = 0
+offset_left = 382.99988
+offset_top = 130.27881
+offset_right = 2431.0
+offset_bottom = 2178.2788
+rotation = -0.002303563
+scale = Vector2(0.05910119, 0.055581227)
+texture_normal = ExtResource("5_3mcjx")
+texture_pressed = ExtResource("6_xm0uq")
+texture_hover = ExtResource("6_xm0uq")
+
+[node name="next_level" type="TextureButton" parent="Panel" unique_id=371495659]
+layout_mode = 0
+offset_left = 224.99997
+offset_top = 128.0
+offset_right = 2273.0
+offset_bottom = 2176.0
+scale = Vector2(0.058514062, 0.05581164)
+texture_normal = ExtResource("7_dle1l")
+texture_pressed = SubResource("CompressedTexture2D_5i6hl")
+texture_hover = SubResource("CompressedTexture2D_5i6hl")
+flip_h = true
+
+[node name="InstallSounds" parent="." unique_id=70294679 instance=ExtResource("8_81t5l")]
+root_path = NodePath("..")
+
+[connection signal="pressed" from="Panel/back_menu" to="." method="_on_back_menu_pressed"]
+[connection signal="pressed" from="Panel/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/next_level" to="." method="_on_next_level_pressed"]

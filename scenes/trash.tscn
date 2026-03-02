@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dq87wte72q7l5"]
 
 [ext_resource type="Texture2D" uid="uid://f86kv3l462qs" path="res://assets/object_sprites/trash.png" id="1_3xixx"]
+[ext_resource type="Script" uid="uid://bh0h8cgqas8fe" path="res://scripts/trash.gd" id="1_exrr5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_exrr5"]
 atlas = ExtResource("1_3xixx")
@@ -266,13 +267,18 @@ animations = [{
 size = Vector2(108.5, 15)
 
 [node name="trash" type="Area2D" unique_id=1931076463 groups=["trash"]]
+script = ExtResource("1_exrr5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2057736181]
 position = Vector2(-8.000004, -14.000001)
 scale = Vector2(0.10348306, 0.11183449)
 sprite_frames = SubResource("SpriteFrames_cbtch")
 animation = &"trash_cleaning"
+frame = 35
+frame_progress = 0.17316839
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1346789541]
 shape = SubResource("RectangleShape2D_1kgm5")
 debug_color = Color(0.2784314, 0.61960787, 0.34509805, 0.41960785)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

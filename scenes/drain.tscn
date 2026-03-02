@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://be5uqdysw7gvd"]
 
 [ext_resource type="Texture2D" uid="uid://te7hk73gex6" path="res://assets/object_sprites/pipes/new water pipe.png" id="1_i35eh"]
+[ext_resource type="Script" uid="uid://d1eagfb7if3dl" path="res://scripts/drain.gd" id="1_yhqbb"]
 [ext_resource type="Texture2D" uid="uid://dduexlpf5gilx" path="res://assets/object_sprites/drain_trash.png" id="2_a7fvc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yhqbb"]
@@ -85,6 +86,7 @@ animations = [{
 radius = 34.539833
 
 [node name="drain" type="Area2D" unique_id=1790790947 groups=["drain_trash"]]
+script = ExtResource("1_yhqbb")
 
 [node name="round_pipe" type="Sprite2D" parent="." unique_id=574367204]
 position = Vector2(0.18750957, 3.25001)

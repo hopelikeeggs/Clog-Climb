@@ -6,6 +6,7 @@ const TRASH_GOAL = 1
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var interaction_area = $InteractionArea
+@onready var anim = $AnimatedSprite2D
 
 #Sound_Effects
 
@@ -13,12 +14,14 @@ const TRASH_GOAL = 1
 @onready var jump_sound = $jumpsound
 @onready var pickup_sound = $pickupsound
 
+
 var pipe_fall := false
 var is_picking_up := false
 var trash_collected := 0
 var can_take_damage := true
 var max_health = 3
 var health = 3 
+var can_move = true
 
 func start_pipe_fall():
 	pipe_fall = true
@@ -33,6 +36,9 @@ func _ready():
 	get_tree().call_group("ui", "update_hearts", health)
 	get_tree().call_group("ui", "update_trash_count", trash_collected, TRASH_GOAL)
 
+
+func play_clean_animation():
+	anim.play("drain_cleaning")
 func _on_anim_finished():
 	if animated_sprite.animation == "pick_up_trash":
 		is_picking_up = false
@@ -54,7 +60,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		jump_sound.play()
-	
+	if not can_move:
+		return  # 🚫 stop all movement when climbing
+
 	var direction := Input.get_axis("move_Left", "move_Right")
 	
 	if direction > 0:

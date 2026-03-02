@@ -2,11 +2,12 @@ extends Node2D
 
 @export var amount_to_show:= 1
 @export var level_number: int = 1
-@onready var spawn_point = $PlayerSpawn
+@onready var spawn_point = $mang_juan
 
-var total_trash := 0
+var total_drains := 1
+var cleaned_drains := 0
+var total_trash := 1
 var collected_trash := 0
-var level_completed := false
 
 func _ready():
 	if PlayerData.selected_character_scene == null:
@@ -18,9 +19,10 @@ func _ready():
 # Called when the node enters the scene tree for the first time.
 
 	randomize()
-	randomize_trash()
+	randomize_normal_trash()
+	count_drains()
 
-func randomize_trash():
+func randomize_normal_trash():
 	var trash_list = get_tree().get_nodes_in_group("trash")
 
 	# Hide all first
@@ -39,9 +41,15 @@ func trash_collected():
 	collected_trash += 1
 	
 	if collected_trash >= total_trash:
-		level_completed = true
+		level_completed()
 		print("LEVEL COMPLETE")
-
+	
+func try_finish_level():
+	if collected_trash >= total_trash:
+		level_completed()
+	else:
+		print("Collect all trash first!")
+		
 func level_completed():
 	Progress.unlock_level(level_number + 1)
 	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
@@ -49,3 +57,8 @@ func level_completed():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func count_drains():
+	var drain_list = get_tree().get_nodes_in_group("drain")
+	total_drains = drain_list.size()
+	print("Total drains:", total_drains)

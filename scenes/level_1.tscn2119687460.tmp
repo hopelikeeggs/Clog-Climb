@@ -44,6 +44,7 @@ _surfaces = [{
 
 [node name="level1" type="Node2D" unique_id=150462360]
 script = ExtResource("1_2cbcq")
+amount_to_show = null
 
 [node name="background" type="Node2D" parent="." unique_id=1525331335]
 
@@ -212,7 +213,7 @@ offset_right = -1.0
 offset_bottom = 4.0
 
 [node name="timer_container" type="Sprite2D" parent="CanvasLayer" unique_id=97038218]
-position = Vector2(633, 30)
+position = Vector2(618, 30)
 scale = Vector2(0.1055, 0.129)
 texture = ExtResource("20_so66j")
 
