@@ -3,26 +3,6 @@
 [ext_resource type="Script" uid="uid://cbwx6sreqjolj" path="res://scripts/mang_juan.gd" id="1_8iul5"]
 [ext_resource type="Texture2D" uid="uid://dsljpwigrjox0" path="res://assets/player_sprites/mang juan/Mang Juan.png" id="2_41iod"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j05ij"]
-atlas = ExtResource("2_41iod")
-region = Rect2(951, 3204, 317, 356)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_en0vv"]
-atlas = ExtResource("2_41iod")
-region = Rect2(317, 3204, 317, 356)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uki8y"]
-atlas = ExtResource("2_41iod")
-region = Rect2(634, 3204, 317, 356)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o4hqg"]
-atlas = ExtResource("2_41iod")
-region = Rect2(0, 3204, 317, 356)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7e412"]
-atlas = ExtResource("2_41iod")
-region = Rect2(951, 1068, 317, 356)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ny8sk"]
 atlas = ExtResource("2_41iod")
 region = Rect2(0, 3916, 317, 356)
@@ -42,6 +22,26 @@ region = Rect2(0, 3560, 317, 356)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0lfri"]
 atlas = ExtResource("2_41iod")
 region = Rect2(634, 3560, 317, 356)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j05ij"]
+atlas = ExtResource("2_41iod")
+region = Rect2(951, 3204, 317, 356)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en0vv"]
+atlas = ExtResource("2_41iod")
+region = Rect2(317, 3204, 317, 356)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uki8y"]
+atlas = ExtResource("2_41iod")
+region = Rect2(634, 3204, 317, 356)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4hqg"]
+atlas = ExtResource("2_41iod")
+region = Rect2(0, 3204, 317, 356)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e412"]
+atlas = ExtResource("2_41iod")
+region = Rect2(951, 1068, 317, 356)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0t7df"]
 atlas = ExtResource("2_41iod")
@@ -95,6 +95,26 @@ region = Rect2(951, 1068, 317, 356)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ny8sk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2xwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmhd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kr47q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lfri")
+}],
+"loop": true,
+"name": &"drain_cleaning",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_j05ij")
 }, {
 "duration": 1.0,
@@ -116,26 +136,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ny8sk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u2xwt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xmhd0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kr47q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0lfri")
-}],
-"loop": true,
-"name": &"new_animation",
 "speed": 5.0
 }, {
 "frames": [{
@@ -190,25 +190,27 @@ radius = 9.0
 height = 120.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lfri"]
-size = Vector2(76.75, 23.25)
+size = Vector2(58.375, 91.625)
 
 [node name="mang_juan" type="CharacterBody2D" unique_id=737011571]
+collision_mask = 2
 script = ExtResource("1_8iul5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1723591420]
 position = Vector2(4, -5)
 scale = Vector2(0.38012615, 0.3820224)
 sprite_frames = SubResource("SpriteFrames_xmhd0")
-animation = &"idle"
+animation = &"drain_cleaning"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1834212130 groups=["player"]]
 shape = SubResource("CapsuleShape2D_kr47q")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=262185500]
+collision_layer = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1432968940]
-position = Vector2(0, 49)
+position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_0lfri")
 debug_color = Color(1.8049032e-07, 0.1455844, 0.17680845, 0.41960785)
 

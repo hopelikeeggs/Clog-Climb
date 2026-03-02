@@ -267,6 +267,7 @@ animations = [{
 size = Vector2(108.5, 15)
 
 [node name="trash" type="Area2D" unique_id=1931076463 groups=["trash"]]
+collision_layer = 16
 script = ExtResource("1_exrr5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2057736181]

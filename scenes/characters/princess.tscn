@@ -24,6 +24,23 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("7_8u1ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2av4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oqxee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vwif6")
+}],
+"loop": true,
+"name": &"drain_cleaning",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_yuv6r")
 }, {
 "duration": 1.0,
@@ -45,23 +62,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_8u1ty")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_2av4j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_oqxee")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_vwif6")
-}],
-"loop": true,
-"name": &"new_animation",
 "speed": 5.0
 }, {
 "frames": [{
@@ -113,19 +113,21 @@ height = 104.0
 size = Vector2(75.75, 23.125)
 
 [node name="princess" type="CharacterBody2D" unique_id=1785045198]
+collision_mask = 2
 script = ExtResource("1_xkhgp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=507954349]
 position = Vector2(2, -8.000002)
 scale = Vector2(0.041046143, 0.059570313)
 sprite_frames = SubResource("SpriteFrames_jwccx")
-animation = &"idle"
+animation = &"drain_cleaning"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1812112191]
 shape = SubResource("CapsuleShape2D_t8awf")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1712532624]
+collision_layer = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=722219150]
 position = Vector2(0, 40)

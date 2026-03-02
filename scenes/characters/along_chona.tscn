@@ -25,6 +25,23 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("7_5qkjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8uhav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d0spq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0bvaw")
+}],
+"loop": true,
+"name": &"drain_cleaning",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_chmqs")
 }, {
 "duration": 1.0,
@@ -46,23 +63,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_5qkjt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_8uhav")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_d0spq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_0bvaw")
-}],
-"loop": true,
-"name": &"new_animation",
 "speed": 5.0
 }, {
 "frames": [{
@@ -117,19 +117,21 @@ height = 112.0
 size = Vector2(76.875, 22.125)
 
 [node name="along_chona" type="CharacterBody2D" unique_id=1785045198]
+collision_mask = 2
 script = ExtResource("1_jeb2m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=507954349]
 position = Vector2(10.000001, -12)
 scale = Vector2(0.05084229, 0.06689453)
 sprite_frames = SubResource("SpriteFrames_3r4q8")
-animation = &"idle"
+animation = &"drain_cleaning"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1812112191]
 shape = SubResource("CapsuleShape2D_t8awf")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1712532624]
+collision_layer = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=722219150]
 position = Vector2(0, 44)

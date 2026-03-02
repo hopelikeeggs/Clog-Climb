@@ -86,6 +86,7 @@ animations = [{
 radius = 34.539833
 
 [node name="drain" type="Area2D" unique_id=1790790947 groups=["drain_trash"]]
+collision_layer = 32
 script = ExtResource("1_yhqbb")
 
 [node name="round_pipe" type="Sprite2D" parent="." unique_id=574367204]
@@ -103,3 +104,6 @@ animation = &"drain_cleaning"
 scale = Vector2(0.7674179, 0.7723911)
 shape = SubResource("CircleShape2D_81tf3")
 debug_color = Color(0.27932125, 0.62070704, 0.34451586, 0.41960785)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="child_entered_tree" from="CollisionShape2D" to="." method="_on_collision_shape_2d_child_entered_tree"]

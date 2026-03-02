@@ -21,22 +21,20 @@ func show_selected_character(character_name: String):
 	# Hide all animations first
 	for child in anim_container.get_children():
 		child.visible = false
-	
+
 	# Show selected animation
 	var selected_anim = anim_container.get_node(character_name)
 	selected_anim.visible = true
 	selected_anim.play("player_selected")
-	
+
 	# Store selection locally
 	selected_character = character_name
-	
+
 	# Store in Global (PackedScene)
-	PlayerData.selected_character_scene = load("res://scene/characters/" + character_name + ".tscn")
+	PlayerData.selected_character_scene = load("res://scenes/characters/" + character_name + ".tscn")
 	PlayerData.selected_character_name = character_name
-	
+
 	next_button.disabled = false
-
-
 
 # BUTTON SIGNALS
 func _on_mang_juan_pressed():

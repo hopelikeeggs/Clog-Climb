@@ -26,6 +26,23 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("7_vkiv1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3wid4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ciq0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_f11ga")
+}],
+"loop": true,
+"name": &"drain_cleaning",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_yt4bi")
 }, {
 "duration": 1.0,
@@ -47,23 +64,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_vkiv1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_3wid4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_ciq0i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_f11ga")
-}],
-"loop": true,
-"name": &"new_animation",
 "speed": 5.0
 }, {
 "frames": [{
@@ -121,13 +121,14 @@ height = 114.0
 size = Vector2(75.75, 23.625)
 
 [node name="jobert" type="CharacterBody2D" unique_id=1785045198]
+collision_mask = 2
 script = ExtResource("1_sxv3q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=507954349]
 position = Vector2(7, 1)
 scale = Vector2(0.050354008, 0.06640625)
 sprite_frames = SubResource("SpriteFrames_8ghsx")
-animation = &"idle"
+animation = &"drain_cleaning"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1812112191]
@@ -135,6 +136,7 @@ position = Vector2(0, 11)
 shape = SubResource("CapsuleShape2D_t8awf")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1712532624]
+collision_layer = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=722219150]
 position = Vector2(0, 56)

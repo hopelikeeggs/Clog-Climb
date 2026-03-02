@@ -46,40 +46,45 @@ func _on_anim_finished():
 			pickup_sound.stop()
 
 func _physics_process(delta: float) -> void:
+
+	# TRASH = F
 	if Input.is_action_just_pressed("pick_up") and is_on_floor() and not is_picking_up:
 		check_for_trash()
-	
+
+	# DRAIN = W
+	if Input.is_action_just_pressed("drain_pick_up") and is_on_floor() and not is_picking_up:
+		check_for_drain()
+
 	if is_picking_up:
 		velocity.x = 0
 		move_and_slide()
 		return
-	
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
+
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		jump_sound.play()
+
 	if not can_move:
-		return  # 🚫 stop all movement when climbing
+		return
 
 	var direction := Input.get_axis("move_Left", "move_Right")
-	
+
 	if direction > 0:
-		
 		animated_sprite.flip_h = false
 		interaction_area.scale.x = 1
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		interaction_area.scale.x = -1
-	
+
 	if is_on_floor():
 		if direction == 0:
 			animated_sprite.play("idle")
 			run_sound.stop()
 		else:
 			animated_sprite.play("run")
-		
 			if not run_sound.playing:
 				run_sound.play()
 	else:
@@ -90,31 +95,53 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
+
 	move_and_slide()
 
 func check_for_trash():
 	var targets = interaction_area.get_overlapping_areas()
+
 	for area in targets:
 		if area.is_in_group("trash"):
 			is_picking_up = true
 			velocity = Vector2.ZERO
 			animated_sprite.play("pick_up_trash")
 			pickup_sound.play()
-			
+
 			if area.has_method("play_pickup"):
 				area.play_pickup()
-				await area.tree_exited
-				
-				is_picking_up = false
-				trash_collected += 1
-				
-				get_tree().call_group("ui", "update_trash_count", trash_collected, TRASH_GOAL)
-				
-				if trash_collected >= TRASH_GOAL:
-					print("All trash collected! Go to the ladder!")
+
+			await animated_sprite.animation_finished
+
+			area.queue_free()
+
+			is_picking_up = false
+
+			var level = get_tree().current_scene
+			if level.has_method("trash_collected"):
+				level.trash_collected()
 			break
 
+func check_for_drain():
+	var targets = interaction_area.get_overlapping_areas()
+
+	for area in targets:
+		if area.is_in_group("drain_trash"):
+			is_picking_up = true
+			velocity = Vector2.ZERO
+			animated_sprite.play("drain_cleaning")
+
+			await animated_sprite.animation_finished
+
+			if area.has_method("clean_drain"):
+				area.clean_drain()
+
+			is_picking_up = false
+
+			var level = get_tree().current_scene
+			if level.has_method("drain_cleaned"):
+				level.drain_cleaned()
+			break
 func die():
 	get_tree().paused = true
 	get_tree().call_group("ui", "show_game_over")
