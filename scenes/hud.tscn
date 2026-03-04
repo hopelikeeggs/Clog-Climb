@@ -16,6 +16,14 @@ offset_bottom = 50.837303
 theme_override_font_sizes/font_size = 25
 text = "0/1"
 
+[node name="DrainCounter" type="Label" parent="." unique_id=1070551507]
+offset_left = 456.0
+offset_top = 15.837305
+offset_right = 496.0
+offset_bottom = 50.837303
+theme_override_font_sizes/font_size = 25
+text = "0/1"
+
 [node name="trash" type="Sprite2D" parent="." unique_id=235078812]
 position = Vector2(253.49997, 32.837303)
 scale = Vector2(0.116639435, 0.11111111)
@@ -34,11 +42,3 @@ scale = Vector2(0.019471813, 0.021139793)
 texture = ExtResource("3_6fi6k")
 region_enabled = true
 region_rect = Rect2(76.7312, 4586.0815, 1831.6708, 1410.1982)
-
-[node name="DrainCounter" type="Label" parent="." unique_id=1070551507]
-offset_left = 456.0
-offset_top = 15.837305
-offset_right = 496.0
-offset_bottom = 50.837303
-theme_override_font_sizes/font_size = 25
-text = "0/1"

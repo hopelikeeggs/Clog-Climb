@@ -1,6 +1,5 @@
 extends Area2D
 
-
 @export var ladder_climb_scene: PackedScene  # Reference to the ladder climb animation scene
 
 # Flag to check if the player is inside the ladder area

@@ -76,6 +76,8 @@ func _on_question_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		_hide_all()
 		question.visible = true
+	elif !question.visible:
+		question.visible = false
 	else:
 		question.visible = false
 		
@@ -84,6 +86,8 @@ func _on_info_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		_hide_all()
 		info.visible = true
+	elif !info.visible:
+		info.visible = false
 	else:
 		info.visible = false
 

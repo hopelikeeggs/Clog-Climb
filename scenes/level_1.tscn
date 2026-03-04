@@ -12,10 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://dngh2h7y8sy75" path="res://assets/object_sprites/water pipe.png" id="5_7gny6"]
 [ext_resource type="Texture2D" uid="uid://bm5wmqqu1je6t" path="res://assets/object_sprites/tunnel.png" id="6_2aecg"]
 [ext_resource type="PackedScene" uid="uid://dnsrd7g5wrkxw" path="res://scenes/characters/mang_juan.tscn" id="6_pa8r4"]
+[ext_resource type="Texture2D" uid="uid://te7hk73gex6" path="res://assets/object_sprites/pipes/new water pipe.png" id="8_mbb35"]
 [ext_resource type="PackedScene" uid="uid://be5uqdysw7gvd" path="res://scenes/drain.tscn" id="9_2os1m"]
 [ext_resource type="PackedScene" uid="uid://dq87wte72q7l5" path="res://scenes/trash.tscn" id="9_2y5yt"]
-[ext_resource type="Script" uid="uid://doubcjouse4rc" path="res://scripts/ladder_area_2d.gd" id="9_k8ld0"]
-[ext_resource type="PackedScene" uid="uid://bjy0de2uqofgq" path="res://scenes/ladder_climb.tscn" id="10_hjqri"]
 [ext_resource type="PackedScene" uid="uid://bbn1getpr8k" path="res://scenes/flood.tscn" id="12_go7sj"]
 [ext_resource type="Texture2D" uid="uid://bvu4ewiw8ecxt" path="res://assets/object_sprites/Point.png" id="14_6dial"]
 [ext_resource type="Texture2D" uid="uid://derbrcqk7mndo" path="res://assets/Button_sprite/new_buttons/setting.png" id="16_x2xxo"]
@@ -49,6 +48,7 @@ _surfaces = [{
 
 [node name="level1" type="Node2D" unique_id=150462360]
 script = ExtResource("1_2cbcq")
+amount_to_show = 2
 
 [node name="background" type="Node2D" parent="." unique_id=1525331335]
 
@@ -108,12 +108,30 @@ scale = Vector2(0.074666664, 0.18319999)
 mesh = SubResource("ArrayMesh_6dial")
 texture = ExtResource("6_2aecg")
 
+[node name="round_pipe" type="Sprite2D" parent="background" unique_id=323005075]
+position = Vector2(-331.00003, -65)
+scale = Vector2(0.04135926, 0.041674428)
+texture = ExtResource("8_mbb35")
+
+[node name="round_pipe2" type="Sprite2D" parent="background" unique_id=1517786757]
+position = Vector2(396.00003, 63.000004)
+scale = Vector2(0.04135926, 0.041674428)
+texture = ExtResource("8_mbb35")
+
+[node name="round_pipe3" type="Sprite2D" parent="background" unique_id=910180027]
+position = Vector2(369.00003, -131)
+scale = Vector2(0.04135926, 0.041674428)
+texture = ExtResource("8_mbb35")
+
+[node name="round_pipe4" type="Sprite2D" parent="background" unique_id=1700283905]
+position = Vector2(-29, -181.00002)
+scale = Vector2(0.04135926, 0.041674428)
+texture = ExtResource("8_mbb35")
+
 [node name="platforms" type="Node2D" parent="." unique_id=760304441]
 
 [node name="ladder_area2D" parent="platforms" unique_id=1012942828 instance=ExtResource("2_fcfvj")]
-position = Vector2(-393.5, -317.99997)
-script = ExtResource("9_k8ld0")
-ladder_climb_scene = ExtResource("10_hjqri")
+position = Vector2(-394, -322)
 
 [node name="platform1" parent="platforms" unique_id=1328984356 instance=ExtResource("2_rus8k")]
 position = Vector2(-27.5, -90.99997)
@@ -144,6 +162,12 @@ position = Vector2(-331.5, -67.99997)
 
 [node name="drain2" parent="." unique_id=932804379 instance=ExtResource("9_2os1m")]
 position = Vector2(395.5, 61.00003)
+
+[node name="drain3" parent="." unique_id=198665529 instance=ExtResource("9_2os1m")]
+position = Vector2(368, -133)
+
+[node name="drain4" parent="." unique_id=449650645 instance=ExtResource("9_2os1m")]
+position = Vector2(-30, -183)
 
 [node name="trash" parent="." unique_id=1931076463 instance=ExtResource("9_2y5yt")]
 position = Vector2(30.5, 79.00003)
@@ -193,7 +217,7 @@ collision_layer = 2
 shape = SubResource("WorldBoundaryShape2D_7gny6")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=689975213]
-color = Color(0.4506483, 0.4506483, 0.45064825, 1)
+color = Color(0.56736773, 0.56736773, 0.56736785, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1798960932]
 
@@ -274,8 +298,6 @@ texture = ExtResource("27_mmfjm")
 
 [node name="HUD" parent="." unique_id=1562917764 instance=ExtResource("30_iw4em")]
 
-[connection signal="body_entered" from="platforms/ladder_area2D" to="platforms/ladder_area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="platforms/ladder_area2D" to="platforms/ladder_area2D" method="_on_body_exited"]
 [connection signal="timeout" from="CanvasLayer/timer_container/timer/Timer" to="CanvasLayer/timer_container/timer" method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="CanvasLayer/paused" to="." method="_on_paused_pressed"]

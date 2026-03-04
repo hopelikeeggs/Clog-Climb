@@ -141,6 +141,7 @@ func check_for_drain():
 				
 				is_picking_up = false
 				animated_sprite.play("idle")
+				drain_cleaned += 1
 				get_tree().call_group("ui", "update_drain_count",drain_cleaned,DRAIN_GOAL)
 				print("Drain cleaned!")
 				

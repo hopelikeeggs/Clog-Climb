@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://t4lfxcvcvi0x"]
+
+[ext_resource type="Script" uid="uid://bqxxs470xcc22" path="res://scripts/mechanics.gd" id="1_67023"]
+[ext_resource type="Texture2D" uid="uid://c4fbqrn6u683k" path="res://assets/container_sprites/Untitled183_20260226194708.png" id="2_c2mn1"]
+[ext_resource type="Texture2D" uid="uid://0ypt4uceacyj" path="res://assets/Button_sprite/new_buttons/back_pause.png" id="3_v81a4"]
+[ext_resource type="Texture2D" uid="uid://dnrce5sc5tf3r" path="res://assets/Button_sprite/new_buttons/back_pause_pressed.png" id="4_wedaa"]
+[ext_resource type="Texture2D" uid="uid://wmg8x6y62kab" path="res://assets/container_sprites/Untitled183_20260303114613.png" id="5_mqan6"]
+
+[node name="mechanics" type="Control" unique_id=1178775812]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_67023")
+
+[node name="Panel" type="Panel" parent="." unique_id=1091533381]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -229.0
+offset_right = 285.0
+offset_bottom = 158.25
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="mechanics" type="Sprite2D" parent="Panel" unique_id=1472195480]
+visible = false
+position = Vector2(285.5, 166.5)
+scale = Vector2(0.8986486, 0.79375)
+texture = ExtResource("2_c2mn1")
+
+[node name="back" type="TextureButton" parent="Panel/mechanics" unique_id=1837691546]
+offset_left = -311.02255
+offset_top = -209.7638
+offset_right = 1736.9774
+offset_bottom = 1838.2362
+scale = Vector2(0.042336747, 0.042230435)
+texture_normal = ExtResource("3_v81a4")
+texture_pressed = ExtResource("4_wedaa")
+texture_hover = ExtResource("4_wedaa")
+
+[node name="mechanics2" type="Sprite2D" parent="Panel" unique_id=1692964823]
+position = Vector2(285.5, 166.5)
+scale = Vector2(0.8986486, 0.79375)
+texture = ExtResource("5_mqan6")
+
+[node name="next" type="TextureButton" parent="Panel/mechanics2" unique_id=1083419146]
+offset_left = 223.1128
+offset_top = -205.98425
+offset_right = 2271.1128
+offset_bottom = 1842.0157
+scale = Vector2(0.040914904, 0.041252356)
+texture_normal = ExtResource("3_v81a4")
+texture_pressed = ExtResource("4_wedaa")
+texture_hover = ExtResource("4_wedaa")
+flip_h = true
+
+[connection signal="pressed" from="Panel/mechanics/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/mechanics2/next" to="." method="_on_next_pressed"]

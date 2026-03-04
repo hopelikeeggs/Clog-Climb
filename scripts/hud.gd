@@ -17,10 +17,3 @@ func update_drain_count(current_amount: int, goal_amount: int):
 
 func update_hearts(health: int):
 	print("Health UI updated to: ", health)
-
-func show_victory_screen():
-	var victory_label = Label.new()
-	victory_label.text = "LEVEL COMPLETE! MANG JUAN SAVED THE DAY! <3 "
-	victory_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	add_child(victory_label)
-	victory_label.set_anchors_and_offsets_preset(Control.PRESET_CENTER)

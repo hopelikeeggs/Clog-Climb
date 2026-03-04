@@ -85,7 +85,7 @@
 [ext_resource type="Texture2D" uid="uid://dn8ngcmxj4ulj" path="res://assets/Button_sprite/new_buttons/next.png" id="83_av474"]
 [ext_resource type="PackedScene" uid="uid://drtq8b4hmacq4" path="res://scenes/option.tscn" id="84_j8im3"]
 [ext_resource type="AudioStream" uid="uid://cyr8hollsqwon" path="res://assets/music_&_SFX/mus_battle1.ogg" id="84_u1oo3"]
-[ext_resource type="Texture2D" uid="uid://bbp0a23nq4r3m" path="res://assets/mechanics.png" id="85_u1oo3"]
+[ext_resource type="PackedScene" uid="uid://t4lfxcvcvi0x" path="res://scenes/mechanics.tscn" id="85_j8im3"]
 [ext_resource type="Texture2D" uid="uid://brt8h5gq05687" path="res://assets/Info.png" id="86_lj4rg"]
 [ext_resource type="PackedScene" uid="uid://pg23r54v6h6g" path="res://scenes/install_sounds.tscn" id="88_lj4rg"]
 
@@ -640,16 +640,6 @@ anchors_preset = 0
 offset_right = 1154.0
 offset_bottom = 68.0
 
-[node name="back" type="TextureButton" parent="Button_manager" unique_id=606778843]
-layout_mode = 0
-offset_left = 6.0
-offset_right = 2054.0
-offset_bottom = 2048.0
-scale = Vector2(0.037982542, 0.032958653)
-texture_normal = ExtResource("74_5pldk")
-texture_pressed = ExtResource("75_eqkiw")
-texture_hover = ExtResource("75_eqkiw")
-
 [node name="option" type="TextureButton" parent="Button_manager" unique_id=335124160]
 layout_mode = 0
 offset_left = 84.0
@@ -682,6 +672,17 @@ texture_normal = ExtResource("80_wb6bb")
 texture_pressed = ExtResource("81_4cktg")
 texture_hover = ExtResource("81_4cktg")
 
+[node name="back" type="TextureButton" parent="Button_manager" unique_id=311147826]
+layout_mode = 0
+offset_left = 5.9999995
+offset_top = -1.0000001
+offset_right = 2054.0
+offset_bottom = 2047.0
+scale = Vector2(0.03791427, 0.03337219)
+texture_normal = ExtResource("74_5pldk")
+texture_pressed = ExtResource("75_eqkiw")
+texture_hover = ExtResource("75_eqkiw")
+
 [node name="next" type="TextureButton" parent="." unique_id=31259202]
 offset_left = 954.00006
 offset_top = 507.0
@@ -710,14 +711,6 @@ anchor_bottom = 0.5
 offset_left = 0.0
 offset_right = 0.0
 
-[node name="mechanics" type="MeshInstance2D" parent="CanvasLayer" unique_id=301691948]
-process_mode = 3
-visible = false
-position = Vector2(571, 295)
-scale = Vector2(1.8243243, 1.5534697)
-mesh = SubResource("ArrayMesh_056qy")
-texture = ExtResource("85_u1oo3")
-
 [node name="info" type="MeshInstance2D" parent="CanvasLayer" unique_id=1979739561]
 process_mode = 3
 visible = false
@@ -726,6 +719,13 @@ scale = Vector2(2.162162, 2.3307145)
 mesh = SubResource("ArrayMesh_056qy")
 texture = ExtResource("86_lj4rg")
 
+[node name="mechanics" parent="CanvasLayer" unique_id=1178775812 instance=ExtResource("85_j8im3")]
+visible = false
+offset_left = 190.0
+offset_top = 88.0
+offset_right = -177.0
+offset_bottom = -22.0
+
 [node name="InstallSounds" parent="." unique_id=70294679 instance=ExtResource("88_lj4rg")]
 root_path = NodePath("..")
 
@@ -733,8 +733,8 @@ root_path = NodePath("..")
 [connection signal="pressed" from="Character\'s/aling_chona" to="." method="_on_aling_chona_pressed"]
 [connection signal="pressed" from="Character\'s/princess" to="." method="_on_princess_pressed"]
 [connection signal="pressed" from="Character\'s/jobert" to="." method="_on_jobert_pressed"]
-[connection signal="pressed" from="Button_manager/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Button_manager/option" to="." method="_on_option_pressed"]
-[connection signal="pressed" from="Button_manager/info" to="." method="_on_info_pressed"]
-[connection signal="pressed" from="Button_manager/question" to="." method="_on_question_pressed"]
+[connection signal="toggled" from="Button_manager/info" to="." method="_on_info_toggled"]
+[connection signal="toggled" from="Button_manager/question" to="." method="_on_question_toggled"]
+[connection signal="pressed" from="Button_manager/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
