@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://dmnxg1amxscvg"]
+
+[ext_resource type="Script" uid="uid://cbwx6sreqjolj" path="res://scripts/mang_juan.gd" id="1_xkhgp"]
+[ext_resource type="Texture2D" uid="uid://b7nn15x12xt7o" path="res://assets/player_sprites/princess/idle/Untitled126_20260124095004.png" id="2_yuv6r"]
+[ext_resource type="Texture2D" uid="uid://dn86d1bu6dn7j" path="res://assets/player_sprites/princess/idle/Untitled127_20260124122638.png" id="3_4blvk"]
+[ext_resource type="Texture2D" uid="uid://b570ns2we5svc" path="res://assets/player_sprites/princess/idle/Untitled127_20260124122836.png" id="4_idpk0"]
+[ext_resource type="Texture2D" uid="uid://ddda1pf6fvece" path="res://assets/player_sprites/princess/idle/Untitled127_20260124122904.png" id="5_biod7"]
+[ext_resource type="Texture2D" uid="uid://cycrxuxkvnay5" path="res://assets/player_sprites/princess/run/Untitled126_20260124165058.png" id="6_ou5fo"]
+[ext_resource type="Texture2D" uid="uid://3t781l03hpss" path="res://assets/player_sprites/princess/picking trash (up)/Untitled126_20260124121128.png" id="8_2av4j"]
+[ext_resource type="Texture2D" uid="uid://co7trrbr54wtb" path="res://assets/player_sprites/princess/picking trash (up)/Untitled126_20260124121155.png" id="9_oqxee"]
+[ext_resource type="Texture2D" uid="uid://duylfrld2h6n1" path="res://assets/player_sprites/princess/picking trash (up)/Untitled126_20260124121217.png" id="10_vwif6"]
+[ext_resource type="Texture2D" uid="uid://b73lbflpoiaam" path="res://assets/player_sprites/princess/picking trash (down)/Untitled126_20260125192831.png" id="11_4x5md"]
+[ext_resource type="Texture2D" uid="uid://dx4j7jb5pei04" path="res://assets/player_sprites/princess/picking trash (down)/Untitled126_20260125193712.png" id="12_lf617"]
+[ext_resource type="Texture2D" uid="uid://yqgeux25a32s" path="res://assets/player_sprites/princess/picking trash (down)/Untitled126_20260125200151.png" id="13_km4pk"]
+[ext_resource type="Texture2D" uid="uid://cva4lj2h0nx7u" path="res://assets/player_sprites/princess/picking trash (down)/Untitled126_20260125200328.png" id="14_dowb6"]
+[ext_resource type="Texture2D" uid="uid://c8hfnevhgmw7k" path="res://assets/player_sprites/princess/picking trash (down)/Untitled126_20260125200424.png" id="15_8qm2d"]
+[ext_resource type="Texture2D" uid="uid://cs2x7demyod87" path="res://assets/player_sprites/princess/run/Untitled126_20260124161758.png" id="16_hegjq"]
+[ext_resource type="Texture2D" uid="uid://bia5iftjx4oee" path="res://assets/player_sprites/princess/run/Untitled126_20260124162844.png" id="17_6ejdu"]
+[ext_resource type="Texture2D" uid="uid://dfnfdetov24lb" path="res://assets/player_sprites/princess/run/Untitled126_20260124163130.png" id="18_234iw"]
+[ext_resource type="Texture2D" uid="uid://qf2oy368tl2i" path="res://assets/player_sprites/princess/run/Untitled126_20260124164340.png" id="19_cg08e"]
+[ext_resource type="Texture2D" uid="uid://bvu4ewiw8ecxt" path="res://assets/object_sprites/Point.png" id="20_yuv6r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jwccx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_2av4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oqxee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vwif6")
+}],
+"loop": true,
+"name": &"drain_cleaning",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yuv6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4blvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_idpk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_biod7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ou5fo")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_4x5md")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lf617")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_km4pk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_dowb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8qm2d")
+}],
+"loop": true,
+"name": &"pick_up_trash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_hegjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_6ejdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_234iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_cg08e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ou5fo")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t8awf"]
+radius = 7.0
+height = 104.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yg3x1"]
+size = Vector2(75.75, 82.5625)
+
+[node name="princess" type="CharacterBody2D" unique_id=1785045198 groups=["player"]]
+collision_mask = 2
+script = ExtResource("1_xkhgp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=507954349]
+position = Vector2(2, -8.000002)
+scale = Vector2(0.041046143, 0.059570313)
+sprite_frames = SubResource("SpriteFrames_jwccx")
+animation = &"drain_cleaning"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1812112191]
+shape = SubResource("CapsuleShape2D_t8awf")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1579252535]
+zoom = Vector2(1.88, 1.99)
+limit_left = -693
+limit_top = -401
+limit_right = 621
+limit_bottom = 306
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=790434138]
+position = Vector2(0.5, -2.0000305)
+scale = Vector2(2.1347656, 1.8281249)
+color = Color(0.80696934, 0.79277533, 0.7908814, 1)
+texture = ExtResource("20_yuv6r")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1712532624]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=722219150]
+position = Vector2(0, 10.28125)
+shape = SubResource("RectangleShape2D_yg3x1")
+debug_color = Color(1.8049032e-07, 0.1455844, 0.17680845, 0.41960785)
+
+[node name="runsound" type="AudioStreamPlayer2D" parent="." unique_id=1939581120]
+
+[node name="jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=688580678]
+
+[node name="pickupsound" type="AudioStreamPlayer2D" parent="." unique_id=596302756]

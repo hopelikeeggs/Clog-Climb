@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bxcve3hakdj80"]
+
+[ext_resource type="Texture2D" uid="uid://fq87hlkuu6r5" path="res://assets/object_sprites/Untitled83.png" id="1_tx8bi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wli0"]
+size = Vector2(54, 279)
+
+[node name="ladder_area2D" type="Area2D" unique_id=1012942828]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1156300572]
+scale = Vector2(0.04, 0.08)
+texture = ExtResource("1_tx8bi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=953736414]
+shape = SubResource("RectangleShape2D_7wli0")
+debug_color = Color(0.8791992, 0.32360908, 0.28307593, 0.41960785)

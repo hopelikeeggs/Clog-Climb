@@ -1,0 +1,47 @@
+[gd_scene format=4 uid="uid://ce2weyctxgam2"]
+
+[ext_resource type="Script" uid="uid://dt4g6xbfyw1vr" path="res://scripts/heart.gd" id="1_aqp5m"]
+[ext_resource type="Texture2D" uid="uid://bk3j4n4gntawm" path="res://assets/container_sprites/hearts_container.png" id="2_tg2me"]
+[ext_resource type="Texture2D" uid="uid://cn5cqj50lnnuu" path="res://assets/container_sprites/Hearts.png" id="3_m6bqp"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_k8ld0"]
+_surfaces = [{
+"2d": true,
+"aabb": AABB(-128, -43, 0, 256, 85, 0),
+"attribute_data": PackedByteArray("AAB5PwAArD4AAKg9AACqPgAAqD0zM6w+zcwsPQAArj4AAOA8AACuPgAAgDsAAL4+AAAAAAAAvj4AAAAAM7MfPwAAED1m5iY/AAAQPQAAKT8AAGU/AAAqPwAAbT8AACo/AABtPwAAKT/NzHc/AAApP83Mfz8AACE/AACAP83Muj4AAHk/AACwPg=="),
+"format": 34393296913,
+"index_count": 45,
+"index_data": PackedByteArray("EAAPAA4ADgANAAwADAALAAoACgAJAAgACAAHAAYABQAEAAMAAgABAAAAEAAOAAwADAAKAAgACAAGAAUABQADAAIAAgAAABAAEAAMAAgACAAFAAIAAgAQAAgA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 17,
+"vertex_data": PackedByteArray("AADyQgAAKMIAANbCAAAswgAA1sKamSfCZmbqwgAAJMIAAPLCAAAkwgAA/sIAAATCAAAAwwAABMIAAADDmJn9QQAA7sKYmRtCAADuwgAAJEIAAMpCAAAoQgAA2kIAAChCAADaQgAAJEKame9CAAAkQpqZ/0IAAARCAAAAQ2ZmCsIAAPJCAAAgwg==")
+}]
+
+[node name="ui_heart" type="CanvasLayer" unique_id=1319346182]
+script = ExtResource("1_aqp5m")
+
+[node name="Heart_Container" type="MeshInstance2D" parent="." unique_id=624685430]
+position = Vector2(945, 36)
+scale = Vector2(0.8691409, 0.91100335)
+mesh = SubResource("ArrayMesh_k8ld0")
+texture = ExtResource("2_tg2me")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=818202935]
+offset_left = 858.0
+offset_top = 12.0
+offset_right = 1058.0
+offset_bottom = 76.0
+scale = Vector2(0.8646645, 0.7404846)
+
+[node name="heart" type="TextureRect" parent="HBoxContainer" unique_id=984042464]
+layout_mode = 2
+texture = ExtResource("3_m6bqp")
+
+[node name="heart2" type="TextureRect" parent="HBoxContainer" unique_id=496499573]
+layout_mode = 2
+texture = ExtResource("3_m6bqp")
+
+[node name="heart3" type="TextureRect" parent="HBoxContainer" unique_id=1384902279]
+layout_mode = 2
+texture = ExtResource("3_m6bqp")

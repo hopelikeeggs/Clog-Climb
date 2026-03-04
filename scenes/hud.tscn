@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://d1opg1fiv5y2o"]
+
+[ext_resource type="Script" uid="uid://dmpp63emhtdj6" path="res://scripts/hud.gd" id="1_6fi6k"]
+[ext_resource type="Texture2D" uid="uid://f86kv3l462qs" path="res://assets/object_sprites/trash.png" id="1_ahhtf"]
+[ext_resource type="Texture2D" uid="uid://te7hk73gex6" path="res://assets/object_sprites/pipes/new water pipe.png" id="2_5ysmq"]
+[ext_resource type="Texture2D" uid="uid://dduexlpf5gilx" path="res://assets/object_sprites/drain_trash.png" id="3_6fi6k"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1562917764 groups=["HUDui"]]
+script = ExtResource("1_6fi6k")
+
+[node name="TrashCounter" type="Label" parent="." unique_id=2137871704]
+offset_left = 334.99994
+offset_top = 15.837305
+offset_right = 374.99994
+offset_bottom = 50.837303
+theme_override_font_sizes/font_size = 25
+text = "0/1"
+
+[node name="trash" type="Sprite2D" parent="." unique_id=235078812]
+position = Vector2(253.49997, 32.837303)
+scale = Vector2(0.116639435, 0.11111111)
+texture = ExtResource("1_ahhtf")
+region_enabled = true
+region_rect = Rect2(465.5046, 435.79984, 1226.8403, 342.3741)
+
+[node name="round_pipe" type="Sprite2D" parent="." unique_id=1874617969]
+position = Vector2(418.91202, 35.918655)
+scale = Vector2(0.0264531, 0.026287748)
+texture = ExtResource("2_5ysmq")
+
+[node name="trash2" type="Sprite2D" parent="." unique_id=266816559]
+position = Vector2(418.82645, 37.74086)
+scale = Vector2(0.019471813, 0.021139793)
+texture = ExtResource("3_6fi6k")
+region_enabled = true
+region_rect = Rect2(76.7312, 4586.0815, 1831.6708, 1410.1982)
+
+[node name="DrainCounter" type="Label" parent="." unique_id=1070551507]
+offset_left = 456.0
+offset_top = 15.837305
+offset_right = 496.0
+offset_bottom = 50.837303
+theme_override_font_sizes/font_size = 25
+text = "0/1"

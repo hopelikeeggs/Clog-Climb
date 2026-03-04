@@ -1,0 +1,292 @@
+[gd_scene format=4 uid="uid://uskqn8ijcw4x"]
+
+[ext_resource type="Script" uid="uid://c3ipe4w56i4go" path="res://scripts/levels_script/level_1.gd" id="1_2cbcq"]
+[ext_resource type="Texture2D" uid="uid://cvr1o7cpi134n" path="res://assets/object_sprites/game background_.jpg" id="1_014kd"]
+[ext_resource type="Texture2D" uid="uid://dwbyses1i4t3c" path="res://assets/object_sprites/pipes/pipe_bg2.png" id="2_e3sih"]
+[ext_resource type="PackedScene" uid="uid://bxcve3hakdj80" path="res://scenes/ladder_area_2d.tscn" id="2_fcfvj"]
+[ext_resource type="PackedScene" uid="uid://cwhtbwu3llh3b" path="res://scenes/platform_1.tscn" id="2_rus8k"]
+[ext_resource type="Texture2D" uid="uid://cu2n6ff3sxttx" path="res://assets/object_sprites/pipes/pipe_bg3.png" id="3_2y5yt"]
+[ext_resource type="PackedScene" uid="uid://bo52o5tfsa32x" path="res://scenes/platform_2.tscn" id="3_5xbjy"]
+[ext_resource type="Texture2D" uid="uid://bq63813vcwv3w" path="res://assets/object_sprites/pipes/pipe_bg4.png" id="4_2os1m"]
+[ext_resource type="PackedScene" uid="uid://cow3ufb0dt3nn" path="res://scenes/platform_for_ladder.tscn" id="4_5xbjy"]
+[ext_resource type="Texture2D" uid="uid://dngh2h7y8sy75" path="res://assets/object_sprites/water pipe.png" id="5_7gny6"]
+[ext_resource type="Texture2D" uid="uid://bm5wmqqu1je6t" path="res://assets/object_sprites/tunnel.png" id="6_2aecg"]
+[ext_resource type="PackedScene" uid="uid://dnsrd7g5wrkxw" path="res://scenes/characters/mang_juan.tscn" id="6_pa8r4"]
+[ext_resource type="PackedScene" uid="uid://be5uqdysw7gvd" path="res://scenes/drain.tscn" id="9_2os1m"]
+[ext_resource type="PackedScene" uid="uid://dq87wte72q7l5" path="res://scenes/trash.tscn" id="9_2y5yt"]
+[ext_resource type="Script" uid="uid://doubcjouse4rc" path="res://scripts/ladder_area_2d.gd" id="9_k8ld0"]
+[ext_resource type="PackedScene" uid="uid://bbn1getpr8k" path="res://scenes/flood.tscn" id="12_go7sj"]
+[ext_resource type="Texture2D" uid="uid://bvu4ewiw8ecxt" path="res://assets/object_sprites/Point.png" id="14_6dial"]
+[ext_resource type="Texture2D" uid="uid://derbrcqk7mndo" path="res://assets/Button_sprite/new_buttons/setting.png" id="16_x2xxo"]
+[ext_resource type="Texture2D" uid="uid://csp4jttqaawj6" path="res://assets/Button_sprite/new_buttons/setting_pressed.png" id="17_2cbcq"]
+[ext_resource type="PackedScene" uid="uid://drtq8b4hmacq4" path="res://scenes/option.tscn" id="18_isj1j"]
+[ext_resource type="Script" uid="uid://c11ko06mw1bms" path="res://scripts/timer.gd" id="19_tr1x6"]
+[ext_resource type="Texture2D" uid="uid://4p3hlb0t2a3x" path="res://assets/object_sprites/pipes/timer background.png" id="20_so66j"]
+[ext_resource type="Texture2D" uid="uid://f86kv3l462qs" path="res://assets/object_sprites/trash.png" id="22_d5akn"]
+[ext_resource type="Texture2D" uid="uid://te7hk73gex6" path="res://assets/object_sprites/pipes/new water pipe.png" id="26_mmfjm"]
+[ext_resource type="Texture2D" uid="uid://dduexlpf5gilx" path="res://assets/object_sprites/drain_trash.png" id="27_k8ld0"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6dial"]
+_surfaces = [{
+"2d": true,
+"aabb": AABB(-1500, -1208.2, 0, 620.1001, 2458.2, 0),
+"attribute_data": PackedByteArray("qThbP8qOjTz78Fk/YfiIPPvwWT8E54w8jU1YPwTnjDzHTlU/LpCgPJwRVT8ukKA8aGxSP+OlGz3TTVI/46UbPcHKUT/KVEE9Wq5RP8pUQT1zaFE/et94PXNoUT//IX09fmdOP+xRuD0sQE4/7FG4PSxATj8/wcU9eDBPP/2C3T14ME8/g8XhPTziTT8kl/891sVNPySX/z3zRE0/3nEKPi4kTT/ecQo+LiRNP6LRHT4ZvU0/pGsmPhm9TT+Xcyk+CKxMP36MOT7SkUw/fow5PpgkTD8UP0Y+MQhMPxQ/Rj4xCEw/w0xbPjiuTD/TvGM+m3dMP23nez6TX0w/bed7PpNfTD8/wYU+9LZMPwcljD70tkw/zcyMPkSLTD+Eno0+RItMP799nT6nVEw/d76fPuIzTD93vp8+Ch5MP1fsrz4xCEw/V+yvPoDcSz+tad4+gNxLP7e58T7vgks//BjzPrFQSz/8GPM+0LBLP2Sv9z7QsEs/B1oBP/RHSz/c1wE/tRVLP9zXAT92cUs/FvsLPx+FSz8W+ws/H4VLP6xRDz+9LUs//kgRP70tSz+fWRI/tKNLP4bJFD//sks/hskUP9jISz8rhxY/gNxLPyuHFj9Z8ks/mnccP9MDTD+adxw/BstLP4nSHj/QsEs/idIeP/eaSz9B8SM/74JLP0HxIz/QsEs/BkcpP9CwSz/3cCk/lkNLP5wuKz+WQ0s/AiYwP4DcSz8dcjM/gNxLP4O7Mz9Ei0w/XyQ0P0SLTD/wUDQ/3WtOP8ZtND/Rjk4/xm00PzWlYj/vPXw/NaViP6+ZfD8fPmM/xmh9Px8+Yz+4kn0/ryVkP+0Nfj9Pr2Q/AACAPwAAgD8AAIA/AACAP3UCmjz8X1s/dQKaPKk4Wz+CHJQ8"),
+"format": 34393296913,
+"index_count": 246,
+"index_data": PackedByteArray("UgBRAFAAUABPAE4ATgBNAEwATABLAEoASQBIAEcARgBFAEQARABDAEIAQAA/AD4APgA9ADwAOwA6ADkAOQA4ADcANwA2ADUANQA0ADMAMgAxADAALQAsACsAKgApACgAJwAmACUAJAAjACIAIQAgAB8AHQAcABsAGgAZABgAFgAVABQAEwASABEADwAOAA0ACwAKAAkACAAHAAYABgAFAAQABAADAAIAAgABAAAAUwBSAFAAUABOAEwATABKAEkASQBHAEYARgBEAEIAQAA+ADwANwA1ADMAMgAwAC8ALQArACoAKgAoACcAJwAlACQAIQAfAB4AHQAbABoAGgAYABcAFgAUABMAEwARABAADwANAAwACwAJAAgACAAGAAQABAACAAAAUwBQAEwASQBGAEIAQQBAADwAOQA3ADMAMgAvAC4ALgAtACoAKgAnACQAIQAeAB0AHQAaABcAFgATABAADwAMAAsACwAIAAQABAAAAFMAUwBMAEkASQBCAEEAQQA8ADsAOQAzADIAMgAuACoAKgAkACIAIQAdABcAFwAWABAAEAAPAAsACwAEAFMAUwBJAEEAOQAyACoAIgAhABcAFwAQAAsACwBTAEEAOwA5ACoAKgAiABcACwBBADsAOwAqABcAFwALADsA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 84,
+"vertex_data": PackedByteArray("AKCFxJrZlsQAwIPEZgaXxADAg8QA4JbEmlmBxADglsTM7HnEACCWxJg5ecQAIJbEmHlxxABgkMQAIHHEAGCQxACgb8QAgI3EzExvxACAjcQAgG7EM0OJxACAbsQA8IjENLNlxAAggMQAQGXEACCAxABAZcRmJnzEAABoxGbmdMQAAGjEmplzxMwsZMQAgGrEmNljxACAasQAYGLEAABkxAAAYsQAAGTEAABixM0sWMQAwGPEzexSxADAY8QzE1HEAKBgxABAR8Q0U2DEAEBHxDQTX8QAgD/EAMBexACAP8QAwF7EZqYyxGimYMQAgC3EaAZgxADAHsQAwF/EAMAexADAX8SaORXEAMBgxM1sDcQAwGDEAKAMxABAYMQAoAvEAEBgxACA8MMAoF/EAADrwwBAX8QAAOvDAABfxACAw8MAwF7EAIDDwwBAXsQAACTDAEBexGBmi8KYOV3EAAB8wmimXMQAAHzCAMBdxGBmIsIAwF3EADNTQcyMXMQAAJBBmPlbxAAAkEFoBl3EAADqQgBAXcQAAOpCAEBdxJiZFUMAQFzE0MwoQwBAXMQwMzNDmJldxAAAS0Noxl3EAABLQ2gGXsQAAFxDAEBexAAAXEMAgF7EAACLQzSzXsQAAItDzAxexACAlkMAwF3EAICWQwCAXcQAgK9DmDldxACAr0MAwF3EzIzJQwDAXcSYWcpDAIBcxJjZ0kMAgFzEmBnrQwBAXsQ0M/tDAEBexJiZ/EMAQGDEmJn+QwBAYMQ0c/9DAMBlxAAAAERoJmbEAAAARACAkMSaqZdEAICQxJoZmEQAYJHEZhaZRABgkcSaSZlENLOSxADgmUTMfJPEAECcRACAu8QAQJxEAIC7xABglsSa2YXEAGCWxACghcSamZbE")
+}]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7gny6"]
+
+[node name="level1" type="Node2D" unique_id=150462360]
+script = ExtResource("1_2cbcq")
+amount_to_show = null
+
+[node name="background" type="Node2D" parent="." unique_id=1525331335]
+
+[node name="BG" type="Sprite2D" parent="background" unique_id=613969170]
+position = Vector2(638, 700)
+texture = ExtResource("1_014kd")
+
+[node name="BG2" type="Sprite2D" parent="background" unique_id=2032637754]
+position = Vector2(-643, 696)
+texture = ExtResource("1_014kd")
+
+[node name="BG3" type="Sprite2D" parent="background" unique_id=657821606]
+position = Vector2(-639, -22)
+texture = ExtResource("1_014kd")
+
+[node name="BG4" type="Sprite2D" parent="background" unique_id=859713675]
+position = Vector2(637, -20)
+texture = ExtResource("1_014kd")
+
+[node name="BG5" type="Sprite2D" parent="background" unique_id=1140072678]
+position = Vector2(-638, -739)
+texture = ExtResource("1_014kd")
+
+[node name="BG6" type="Sprite2D" parent="background" unique_id=1256738005]
+position = Vector2(638, -739)
+texture = ExtResource("1_014kd")
+
+[node name="bgpipe" type="Sprite2D" parent="background" unique_id=219907167]
+position = Vector2(486.49997, -145.5)
+scale = Vector2(0.3242188, 0.49414065)
+texture = ExtResource("2_e3sih")
+
+[node name="bgpipe2" type="Sprite2D" parent="background" unique_id=1141162243]
+position = Vector2(97.5, -225)
+scale = Vector2(0.5927735, 0.5625)
+texture = ExtResource("3_2y5yt")
+
+[node name="bgpipe3" type="Sprite2D" parent="background" unique_id=1887240603]
+position = Vector2(147.5, 170.75003)
+scale = Vector2(0.33691406, 0.41503903)
+texture = ExtResource("2_e3sih")
+
+[node name="bgpipe4" type="Sprite2D" parent="background" unique_id=1973112966]
+position = Vector2(-454.5, 140.00003)
+scale = Vector2(0.39648435, 0.5214844)
+texture = ExtResource("4_2os1m")
+
+[node name="pipe_where_water?" type="Sprite2D" parent="background" unique_id=1601665207]
+position = Vector2(548.00006, -318)
+scale = Vector2(0.04883334, 0.0442)
+texture = ExtResource("5_7gny6")
+flip_h = true
+
+[node name="tunnel" type="MeshInstance2D" parent="background" unique_id=955765783]
+position = Vector2(-600, 228.99998)
+scale = Vector2(0.074666664, 0.18319999)
+mesh = SubResource("ArrayMesh_6dial")
+texture = ExtResource("6_2aecg")
+
+[node name="platforms" type="Node2D" parent="." unique_id=760304441]
+
+[node name="ladder_area2D" parent="platforms" unique_id=1012942828 instance=ExtResource("2_fcfvj")]
+position = Vector2(-393.5, -317.99997)
+script = ExtResource("9_k8ld0")
+
+[node name="platform1" parent="platforms" unique_id=1328984356 instance=ExtResource("2_rus8k")]
+position = Vector2(-27.5, -90.99997)
+collision_layer = 2
+
+[node name="platform2" parent="platforms" unique_id=1816916386 instance=ExtResource("3_5xbjy")]
+position = Vector2(369.5, -31.99997)
+collision_layer = 2
+
+[node name="platform4" parent="platforms" unique_id=1194001088 instance=ExtResource("3_5xbjy")]
+position = Vector2(30.5, 95.00003)
+collision_layer = 2
+
+[node name="platform3" parent="platforms" unique_id=433027679 instance=ExtResource("2_rus8k")]
+position = Vector2(-331.5, 32.00003)
+collision_layer = 2
+
+[node name="platform5" parent="platforms" unique_id=1340113092 instance=ExtResource("2_rus8k")]
+position = Vector2(395.5, 171.00003)
+collision_layer = 2
+
+[node name="platform_for_ladder" parent="platforms" unique_id=1671184370 instance=ExtResource("4_5xbjy")]
+position = Vector2(-397.5, -161.99997)
+collision_layer = 2
+
+[node name="drain" parent="." unique_id=1790790947 instance=ExtResource("9_2os1m")]
+position = Vector2(-331.5, -67.99997)
+
+[node name="drain2" parent="." unique_id=932804379 instance=ExtResource("9_2os1m")]
+position = Vector2(395.5, 61.00003)
+
+[node name="trash" parent="." unique_id=1931076463 instance=ExtResource("9_2y5yt")]
+position = Vector2(30.5, 79.00003)
+
+[node name="trash2" parent="." unique_id=979712996 instance=ExtResource("9_2y5yt")]
+position = Vector2(-331.5, 16.00003)
+
+[node name="trash3" parent="." unique_id=587421250 instance=ExtResource("9_2y5yt")]
+position = Vector2(-27.5, -106.99997)
+
+[node name="trash4" parent="." unique_id=1692467003 instance=ExtResource("9_2y5yt")]
+position = Vector2(369.5, -47.99997)
+
+[node name="trash5" parent="." unique_id=600216034 instance=ExtResource("9_2y5yt")]
+position = Vector2(395.5, 155.00003)
+
+[node name="mang_juan" parent="." unique_id=737011571 groups=["player"] instance=ExtResource("6_pa8r4")]
+position = Vector2(-393.5, -233.99997)
+collision_mask = 2
+
+[node name="Camera2D" type="Camera2D" parent="mang_juan" unique_id=230307371]
+position = Vector2(1, -1)
+zoom = Vector2(1.88, 1.99)
+limit_left = -693
+limit_top = -401
+limit_right = 621
+limit_bottom = 306
+editor_draw_limits = true
+
+[node name="PointLight2D" type="PointLight2D" parent="mang_juan" unique_id=1597498768]
+position = Vector2(0.5, -2.0000305)
+scale = Vector2(2.1347656, 1.8281249)
+color = Color(0.80696934, 0.79277533, 0.7908814, 1)
+texture = ExtResource("14_6dial")
+
+[node name="flood" parent="." unique_id=1419378107 instance=ExtResource("12_go7sj")]
+position = Vector2(-6, 1520)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2006253237]
+position = Vector2(0, 269)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1606381822]
+shape = SubResource("WorldBoundaryShape2D_7gny6")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=363050426]
+position = Vector2(621.99994, 0)
+rotation = -1.5736241
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=250182360]
+shape = SubResource("WorldBoundaryShape2D_7gny6")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=641430775]
+position = Vector2(-693, 0)
+rotation = -4.711337
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1568691466]
+shape = SubResource("WorldBoundaryShape2D_7gny6")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=689975213]
+color = Color(0.4506483, 0.4506483, 0.45064825, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1798960932]
+
+[node name="option_container" parent="CanvasLayer" unique_id=1999696204 instance=ExtResource("18_isj1j")]
+visible = false
+offset_left = 1.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 4.0
+
+[node name="timer_container" type="Sprite2D" parent="CanvasLayer" unique_id=97038218]
+position = Vector2(618, 30)
+scale = Vector2(0.1055, 0.129)
+texture = ExtResource("20_so66j")
+
+[node name="timer" type="Node2D" parent="CanvasLayer/timer_container" unique_id=1884385474]
+script = ExtResource("19_tr1x6")
+
+[node name="Label" type="Label" parent="CanvasLayer/timer_container/timer" unique_id=962592182]
+offset_left = -360.18958
+offset_top = -201.5504
+offset_right = 407.81042
+offset_bottom = 207.4496
+theme_override_font_sizes/font_size = 300
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="CanvasLayer/timer_container/timer" unique_id=659621]
+autostart = true
+
+[node name="option" type="TextureButton" parent="CanvasLayer" unique_id=2121353189]
+offset_left = 9.0
+offset_top = 2.0
+offset_right = 2057.0
+offset_bottom = 2050.0
+scale = Vector2(0.02924886, 0.030296365)
+texture_normal = ExtResource("16_x2xxo")
+texture_pressed = ExtResource("17_2cbcq")
+texture_hover = ExtResource("17_2cbcq")
+
+[node name="option_light" type="PointLight2D" parent="CanvasLayer/option" unique_id=1310383012]
+position = Vector2(1064.623, 1127.3335)
+scale = Vector2(10.217458, 8.665238)
+color = Color(0.80696934, 0.79277533, 0.7908814, 1)
+texture = ExtResource("14_6dial")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1992946104]
+
+[node name="TrashCounter" type="Label" parent="HUD" unique_id=899206842]
+offset_left = 296.99994
+offset_top = 13.0
+offset_right = 336.99994
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 25
+text = "0/1"
+
+[node name="trash" type="Sprite2D" parent="HUD" unique_id=515657940]
+position = Vector2(215.49997, 30)
+scale = Vector2(0.116639435, 0.11111111)
+texture = ExtResource("22_d5akn")
+region_enabled = true
+region_rect = Rect2(465.5046, 435.79984, 1226.8403, 342.3741)
+
+[node name="round_pipe" type="Sprite2D" parent="HUD" unique_id=805867438]
+position = Vector2(380.91202, 33.08135)
+scale = Vector2(0.0264531, 0.026287748)
+texture = ExtResource("26_mmfjm")
+
+[node name="trash2" type="Sprite2D" parent="HUD" unique_id=1686312295]
+position = Vector2(380.82645, 34.903553)
+scale = Vector2(0.019471813, 0.021139793)
+texture = ExtResource("27_k8ld0")
+region_enabled = true
+region_rect = Rect2(76.7312, 4586.0815, 1831.6708, 1410.1982)
+
+[node name="TrashCounter2" type="Label" parent="HUD" unique_id=1725532138]
+offset_left = 418.0
+offset_top = 13.0
+offset_right = 458.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 25
+text = "0/1"
+
+[connection signal="body_entered" from="platforms/ladder_area2D" to="platforms/ladder_area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="platforms/ladder_area2D" to="platforms/ladder_area2D" method="_on_body_exited"]
+[connection signal="timeout" from="CanvasLayer/timer_container/timer/Timer" to="CanvasLayer/timer_container/timer" method="_on_timer_timeout"]

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bqkfwi5eru4ly"]
+
+[ext_resource type="Script" uid="uid://48qyvspg4866" path="res://scripts/cutscene.gd" id="1_2bm7f"]
+[ext_resource type="Texture2D" uid="uid://bflc4c47tbi1p" path="res://assets/Button_sprite/new_buttons/skip_button_pressed.png" id="2_2bm7f"]
+[ext_resource type="VideoStream" uid="uid://c41g54b4k68q5" path="res://assets/PROLOGUE.ogv" id="2_fs8wb"]
+[ext_resource type="Texture2D" uid="uid://bi1q04ca1q86l" path="res://assets/Button_sprite/new_buttons/skip_button.png" id="3_fs8wb"]
+
+[node name="cutscene" type="Control" unique_id=1729309687]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2bm7f")
+
+[node name="CutsceneVideo" type="VideoStreamPlayer" parent="." unique_id=1447627247]
+layout_mode = 0
+offset_left = -66.0
+offset_top = -69.0
+offset_right = 1214.0
+offset_bottom = 715.0
+stream = ExtResource("2_fs8wb")
+
+[node name="CutsceneCamera" type="Camera2D" parent="CutsceneVideo" unique_id=1659246713]
+position = Vector2(640, 393)
+zoom = Vector2(0.9, 0.83)
+
+[node name="Label" type="Label" parent="." unique_id=1566823789]
+layout_mode = 0
+offset_left = 1027.0
+offset_top = 35.0
+offset_right = 1177.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "PRESS SKIP "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1037861788]
+layout_mode = 0
+offset_left = 1009.0
+offset_top = -49.0
+offset_right = 2929.0
+offset_bottom = 1031.0
+scale = Vector2(0.091263026, 0.094663605)
+texture_normal = ExtResource("2_2bm7f")
+texture_pressed = ExtResource("3_fs8wb")
+texture_hover = ExtResource("3_fs8wb")
+
+[node name="MainCamera" type="Camera2D" parent="." unique_id=1942435774]
+position = Vector2(579, 325)
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

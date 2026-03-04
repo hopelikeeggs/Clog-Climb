@@ -1,0 +1,355 @@
+[gd_scene format=3 uid="uid://cv7n3mwsqq44g"]
+
+[ext_resource type="Script" uid="uid://6xrldai54q4t" path="res://scripts/loading_screen.gd" id="1_6pm23"]
+[ext_resource type="Texture2D" uid="uid://b0aq2et6wkskx" path="res://assets/BG1.jpg" id="1_173jd"]
+[ext_resource type="Texture2D" uid="uid://lkghurgewr2r" path="res://assets/BG2.jpg" id="2_6pm23"]
+[ext_resource type="Texture2D" uid="uid://2p0emt8etx38" path="res://assets/object_sprites/road/Untitled97_20251228234937.jpg" id="3_u5j6a"]
+[ext_resource type="Texture2D" uid="uid://byh4rune4qel" path="res://assets/object_sprites/pipes/wheel 1.png" id="4_8ydpe"]
+[ext_resource type="Texture2D" uid="uid://h3wixeyaui8d" path="res://assets/object_sprites/pipes/wheel 2.png" id="5_8vas3"]
+[ext_resource type="Texture2D" uid="uid://cmgfi1e4hitom" path="res://assets/object_sprites/pipes/wheel3.png" id="6_8rd0j"]
+[ext_resource type="Texture2D" uid="uid://c3lit16fa2wxc" path="res://assets/object_sprites/pipes/wheel4.png" id="7_ps2kl"]
+[ext_resource type="Texture2D" uid="uid://civ26bhv2qjwf" path="res://assets/object_sprites/pipes/wheel 5.png" id="8_7a0li"]
+[ext_resource type="Texture2D" uid="uid://b2pmowf3cpync" path="res://assets/player_sprites/mang juan/running/2.png" id="9_awack"]
+[ext_resource type="Texture2D" uid="uid://b6nb5hm1s0kah" path="res://assets/player_sprites/mang juan/running/3.png" id="10_vg15o"]
+[ext_resource type="Texture2D" uid="uid://bhc0lqmrom60o" path="res://assets/player_sprites/mang juan/running/4.png" id="11_sbx0s"]
+[ext_resource type="Texture2D" uid="uid://5lwlill22j4b" path="res://assets/player_sprites/mang juan/running/5.png" id="12_lq1gk"]
+[ext_resource type="Texture2D" uid="uid://ma3nsxyhu3fj" path="res://assets/player_sprites/mang juan/running/6.png" id="13_6ckxw"]
+[ext_resource type="Texture2D" uid="uid://cs2x7demyod87" path="res://assets/player_sprites/princess/run/Untitled126_20260124161758.png" id="14_6rtdq"]
+[ext_resource type="Texture2D" uid="uid://bia5iftjx4oee" path="res://assets/player_sprites/princess/run/Untitled126_20260124162844.png" id="15_o3mho"]
+[ext_resource type="Texture2D" uid="uid://dfnfdetov24lb" path="res://assets/player_sprites/princess/run/Untitled126_20260124163130.png" id="16_s52e5"]
+[ext_resource type="Texture2D" uid="uid://qf2oy368tl2i" path="res://assets/player_sprites/princess/run/Untitled126_20260124164340.png" id="17_gu0er"]
+[ext_resource type="Texture2D" uid="uid://cycrxuxkvnay5" path="res://assets/player_sprites/princess/run/Untitled126_20260124165058.png" id="18_ro1fc"]
+[ext_resource type="Texture2D" uid="uid://c1yia3d2d6k27" path="res://assets/player_sprites/jobert/run/Untitled106_Restored2_20260118181949.png" id="19_54uhq"]
+[ext_resource type="Texture2D" uid="uid://rhqssmmuhqgb" path="res://assets/player_sprites/jobert/run/Untitled106_Restored2_20260118183622.png" id="20_t8t28"]
+[ext_resource type="Texture2D" uid="uid://dakge0pmnvu7m" path="res://assets/player_sprites/jobert/run/Untitled106_Restored2_20260118185432.png" id="21_k25q2"]
+[ext_resource type="Texture2D" uid="uid://bpe825au3xswx" path="res://assets/player_sprites/jobert/run/Untitled106_Restored2_20260118191808.png" id="22_ltddc"]
+[ext_resource type="Texture2D" uid="uid://bkc8c5rhjtmfl" path="res://assets/player_sprites/jobert/run/Untitled106_Restored2_20260118191824.png" id="23_8kxf4"]
+[ext_resource type="Texture2D" uid="uid://b1pt0gkq1810d" path="res://assets/player_sprites/jobert/run/Untitled106_Restored2_20260118193129.png" id="24_smfty"]
+[ext_resource type="Texture2D" uid="uid://cxkegda7vh0bk" path="res://assets/player_sprites/aling chona/run/3.png" id="25_ltb1b"]
+[ext_resource type="Texture2D" uid="uid://cppawtd05tja6" path="res://assets/player_sprites/aling chona/run/4.png" id="26_vcesy"]
+[ext_resource type="Texture2D" uid="uid://drcg1xr6jwsxm" path="res://assets/player_sprites/aling chona/run/5.png" id="27_3cd40"]
+[ext_resource type="Texture2D" uid="uid://crh3g5r47o2b8" path="res://assets/player_sprites/aling chona/run/6.png" id="28_kh61x"]
+[ext_resource type="Texture2D" uid="uid://37exnsfo7ink" path="res://assets/player_sprites/aling chona/run/7.png" id="29_58h3t"]
+
+[sub_resource type="Animation" id="Animation_dgada"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, 250)]
+}
+
+[sub_resource type="Animation" id="Animation_0aqtw"]
+resource_name = "movinbg"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(576, 250), Vector2(-4016, 250)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n51n4"]
+_data = {
+&"RESET": SubResource("Animation_dgada"),
+&"movinbg": SubResource("Animation_0aqtw")
+}
+
+[sub_resource type="Animation" id="Animation_ri1c0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("road2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2957.6191, 3.3234863)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1722, 574)]
+}
+
+[sub_resource type="Animation" id="Animation_t1rtf"]
+resource_name = "moving"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("road2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2957.6191, 3.3234863), Vector2(-2957.6191, 3.3234863)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1722, 574), Vector2(573.00024, 574)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pdu2y"]
+_data = {
+&"RESET": SubResource("Animation_ri1c0"),
+&"moving": SubResource("Animation_t1rtf")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ukoiq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8ydpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8vas3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8rd0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ps2kl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7a0li")
+}],
+"loop": true,
+"name": &"wheel",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pnckj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_awack")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vg15o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sbx0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lq1gk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6ckxw")
+}],
+"loop": true,
+"name": &"running",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ierv5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_6rtdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_o3mho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_s52e5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gu0er")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ro1fc")
+}],
+"loop": true,
+"name": &"running",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2al3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_54uhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_t8t28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_k25q2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ltddc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_8kxf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_smfty")
+}],
+"loop": true,
+"name": &"running",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_21dek"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_ltb1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_vcesy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3cd40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_kh61x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_58h3t")
+}],
+"loop": true,
+"name": &"running",
+"speed": 5.0
+}]
+
+[node name="LoadingScreen" type="Control" unique_id=1738705406]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6pm23")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=371960850]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 647.0
+color = Color(0.32544088, 0.3254409, 0.32544088, 1)
+
+[node name="BG" type="Sprite2D" parent="." unique_id=296652302]
+position = Vector2(576, 250)
+scale = Vector2(0.9, 1)
+texture = ExtResource("1_173jd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BG" unique_id=1498981334]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_n51n4")
+autoplay = &"movinbg"
+
+[node name="BG2" type="Sprite2D" parent="BG" unique_id=1999346625]
+position = Vector2(1276.6667, -1)
+texture = ExtResource("2_6pm23")
+
+[node name="BG3" type="Sprite2D" parent="BG" unique_id=669389777]
+position = Vector2(5108.889, 0)
+texture = ExtResource("2_6pm23")
+
+[node name="BG4" type="Sprite2D" parent="BG" unique_id=407964220]
+position = Vector2(2557.7778, 0)
+texture = ExtResource("1_173jd")
+
+[node name="BG5" type="Sprite2D" parent="BG" unique_id=420571230]
+position = Vector2(3832.2224, 0)
+texture = ExtResource("2_6pm23")
+
+[node name="road" type="Sprite2D" parent="." unique_id=1822246667]
+position = Vector2(1722, 574)
+scale = Vector2(0.3893334, 0.14399993)
+texture = ExtResource("3_u5j6a")
+
+[node name="road2" type="Sprite2D" parent="road" unique_id=1940132183]
+position = Vector2(-2957.6191, 3.3234863)
+scale = Vector2(0.995719, 1.006647)
+texture = ExtResource("3_u5j6a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="road" unique_id=983986450]
+libraries/ = SubResource("AnimationLibrary_pdu2y")
+autoplay = &"moving"
+
+[node name="on_loading" type="Node2D" parent="." unique_id=831639605]
+
+[node name="Loading_lbl" type="Label" parent="on_loading" unique_id=1409043813]
+offset_left = 8.0
+offset_top = 555.0
+offset_right = 100.0
+offset_bottom = 589.0
+theme_override_font_sizes/font_size = 24
+text = "Loading"
+
+[node name="wheel" type="AnimatedSprite2D" parent="on_loading" unique_id=1240563281]
+position = Vector2(122, 571)
+scale = Vector2(0.020050049, 0.015411379)
+sprite_frames = SubResource("SpriteFrames_ukoiq")
+animation = &"wheel"
+autoplay = "wheel"
+frame_progress = 0.705372
+
+[node name="mang juan" type="AnimatedSprite2D" parent="on_loading" unique_id=1477710295]
+position = Vector2(886.00006, 455)
+scale = Vector2(0.10076905, 0.1099243)
+sprite_frames = SubResource("SpriteFrames_pnckj")
+animation = &"running"
+autoplay = "running"
+frame_progress = 0.9931714
+
+[node name="princess" type="AnimatedSprite2D" parent="on_loading" unique_id=581510044]
+position = Vector2(706, 492.375)
+scale = Vector2(0.09374997, 0.0892334)
+sprite_frames = SubResource("SpriteFrames_ierv5")
+animation = &"running"
+autoplay = "running"
+frame_progress = 0.25239402
+
+[node name="jobert" type="AnimatedSprite2D" parent="on_loading" unique_id=195934554]
+position = Vector2(528.03125, 442.00003)
+scale = Vector2(0.097686745, 0.099609405)
+sprite_frames = SubResource("SpriteFrames_d2al3")
+animation = &"running"
+autoplay = "running"
+frame_progress = 0.7403341
+
+[node name="aling chona" type="AnimatedSprite2D" parent="on_loading" unique_id=1104047465]
+position = Vector2(331.00003, 495)
+scale = Vector2(0.10839843, 0.08715821)
+sprite_frames = SubResource("SpriteFrames_21dek")
+animation = &"running"
+autoplay = "running"
+frame_progress = 0.5481696

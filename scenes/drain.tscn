@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://be5uqdysw7gvd"]
+
+[ext_resource type="Texture2D" uid="uid://te7hk73gex6" path="res://assets/object_sprites/pipes/new water pipe.png" id="1_i35eh"]
+[ext_resource type="Script" uid="uid://d1eagfb7if3dl" path="res://scripts/drain.gd" id="1_yhqbb"]
+[ext_resource type="Texture2D" uid="uid://dduexlpf5gilx" path="res://assets/object_sprites/drain_trash.png" id="2_a7fvc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhqbb"]
+atlas = ExtResource("2_a7fvc")
+region = Rect2(0, 4096, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utkmn"]
+atlas = ExtResource("2_a7fvc")
+region = Rect2(2048, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq1y5"]
+atlas = ExtResource("2_a7fvc")
+region = Rect2(6144, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1gi2"]
+atlas = ExtResource("2_a7fvc")
+region = Rect2(4096, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xvux"]
+atlas = ExtResource("2_a7fvc")
+region = Rect2(0, 2048, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05ex1"]
+atlas = ExtResource("2_a7fvc")
+region = Rect2(6144, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0o71"]
+atlas = ExtResource("2_a7fvc")
+region = Rect2(4096, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30iea"]
+atlas = ExtResource("2_a7fvc")
+region = Rect2(2048, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47gch"]
+atlas = ExtResource("2_a7fvc")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hcg4"]
+atlas = ExtResource("2_a7fvc")
+region = Rect2(2048, 4096, 2048, 2048)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sdp4v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhqbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utkmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq1y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1gi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xvux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05ex1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0o71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30iea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47gch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hcg4")
+}],
+"loop": false,
+"name": &"drain_cleaning_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_81tf3"]
+radius = 34.539833
+
+[node name="drain" type="Area2D" unique_id=1790790947 groups=["drain_trash"]]
+collision_layer = 2
+script = ExtResource("1_yhqbb")
+
+[node name="round_pipe" type="Sprite2D" parent="." unique_id=574367204]
+position = Vector2(0.18750957, 3.25001)
+scale = Vector2(0.04135926, 0.041674428)
+texture = ExtResource("1_i35eh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1626643222]
+position = Vector2(1.187519, -1.7499828)
+scale = Vector2(0.029977262, 0.031680103)
+sprite_frames = SubResource("SpriteFrames_sdp4v")
+animation = &"drain_cleaning_up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1690147955]
+scale = Vector2(0.7674179, 0.7723911)
+shape = SubResource("CircleShape2D_81tf3")
+debug_color = Color(0.27932125, 0.62070704, 0.34451586, 0.41960785)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
