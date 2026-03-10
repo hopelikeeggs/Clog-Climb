@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c0g2ovwhtnhvq" path="res://assets/Button_sprite/Untitled107_20260125232132.png" id="4_8bugq"]
 [ext_resource type="Texture2D" uid="uid://b82qrkmkisnnh" path="res://assets/Button_sprite/new_buttons/restart.png" id="5_wawo4"]
 [ext_resource type="Texture2D" uid="uid://digl051a2nwtw" path="res://assets/Button_sprite/new_buttons/restart_pressed.png" id="6_56v3a"]
+[ext_resource type="Texture2D" uid="uid://0ypt4uceacyj" path="res://assets/Button_sprite/new_buttons/back_pause.png" id="7_8bugq"]
 [ext_resource type="PackedScene" uid="uid://pg23r54v6h6g" path="res://scenes/install_sounds.tscn" id="7_irg28"]
 [ext_resource type="AudioStream" uid="uid://n3scu0xokapa" path="res://assets/music_&_SFX/Game_over_sfx.ogg" id="8_2jtsn"]
 
@@ -22,6 +23,9 @@ _surfaces = [{
 "vertex_count": 178,
 "vertex_data": PackedByteArray("AAD+wgAA7MMAAP7CZibrwwAA/8IAAOvDmBlMwwAA68PMDI3DAIDow5oZn8MAgOjDAACmw83M5sMAAKbDAIDmw8yMs8MAgObDAADTw2Zm4sMAANPDAADiw5qZ1cMAAOLDAADXw2Zm48MAANfDAEDkwwCA3MMAwOXDAIDcw82M5sPNDPTDAADlwwBA98MAAOXDACABxACA3sOauQHEAIDew5o5BcQAgNbDM5MFxACA1sPNDAvEAAC/w81sC8QAAL/DAMALxM2MusMAwAvEmhm5wwAAC8SambfDAEALxM3MtsMAQAvEAICzwwBALcQAALLDAEAtxACAscPNLC/EAICxwwDAMcRmprPDAMAxxACAtMPNzDjEAIC0w2bGO8QAALPDM/M+xAAAs8MAQEHEM/OuwzMTRsQAgK3DM5NHxACArcMzk0zEAICqw5rZTcQAgKrDmtlXxACAocPNbFjEAIChw82sXcQAgJnDmjlexACAmcOauWPEAICNw80MZMQAgI3DAABpxACAeMMAAGnEzMx2wzMza8QAAG7DAKBrxAAAbsMAoGzEAABgwzPzbMQAAGDDM3NtxAAAS8Mz823EAABLwwCAbcQ0s0XDAIBtxGZmOMMzE2zEzEwvwzNzbMQAACPDM9NsxAAAI8MAQGzEzMwQwwBAbMQAAOxCAIBsxAAA7EIAgGzEzEwuQwAAbsQAADZDzWxuxAAANkPN7G7EAABCQ5o5b8QAAEJDAIBvxAAAY0MAgG/EzExsQwAgbsQAAH9DAEBuxAAAikMAQG7EzEyNQ2aGa8QAgJVDAMBqxDQznEMAwGrENDOeQwCAaMQ0s6lDAIBoxMxMq0MAwGLEzEy8QwDAYsQ0c71DAABbxDTzy0MAAFvEzIzMQwBAVMTMjNRDAEBUxDQz1UMAwEzEZibbQwDATMTMzNtDzQxDxACA4EMAoEHEAIDgQwDAPsQ0c+RDAMA+xJpZ5UPNjDvEAIDmQ5rZOcQAgOZDAIA3xJqZ6EMAgDfEAIDpQ5rZL8QAgOlDAIAtxMyM5kMAgBLENPPnQwCAEsQAgOhDAACzwzRz6UMAALPDAADqQwCAtUMAAOpDmvkwRACA5kOaWTNEAIDpQzSTOEQAgOlDZgZBRAAA5UNmJkJEAADlQwCARUTMjOBDmhlLRAAA3kOaWUxEAADeQ5rZUEQAgNpDAOBRRACA2kMAYFdEAADVQ2bmV0QAANVDAKBdRAAAzUM0M15EAADNQzSzY0QAAMNDAABkRAAAw0MAgGlEAAC0QzTTaUQAALRDNNNsRACApkNmJm1EAICmQwDgbkQAAJhDAEBvRAAAmEMAQG9EAIA7wwBAbkQAgEPDAEBuRACAY8MAQG1EAIBrwwBAbUTMzG3DNPNqRAAAd8PMjGpEAAB3wwBAaUQzM4HDAEBpRM3MgsMAAGZEmtmLwwAAZkRm5ozDAIBhRGbmlcMAgGFEAICWwwDAXETNjJ3DAMBcRGYmnsMAwFJEZqanwwDAUkTNTKjDzMxERAAAr8MA4EJEAACvwwAAQETNjLLDAABARDNzs8MAwDdEAAC0w5pZMkQAALTDAIAwRM2MscMAQBJEAICzwwBAA0QAgLPDAEADRAAAtMOaWQJEAAC0w5qZAUQAgLjDNHMBRACAuMMAQAFEmpm8wwBAAUQzs8LDAID/QwBAysMAgP9DzczMwwCA+UOa2dXDAID5QzPz1sMAAPJDM3PdwwAA8kOaGd7DAEDvQwCA38PMzOxDAIDfwwAA6EPNDOPDAADoQ5rZ48MAAOJDZubkwwAA4kNmZuXDzIzVQwCA5sM0M8pDAIDmwzQzw0MAAOLDaKbAQwAA4sMAgKpDZubkwwCAqkMzc+XDAACJQzPz58MAAIlDM3PowwAAJ0MAgOrDAAAnQwAA68M=")
 }]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wawo4"]
+load_path = "res://.godot/imported/back_pause_pressed.png-9b6f6cbec7a115af2d8c9bc15322e1d0.ctex"
 
 [node name="game_over" type="Control" unique_id=580554472]
 process_mode = 3
@@ -67,9 +71,9 @@ texture_hover = ExtResource("4_8bugq")
 
 [node name="restart" type="TextureButton" parent="Panel" unique_id=1810304842]
 layout_mode = 0
-offset_left = 346.0
+offset_left = 220.99998
 offset_top = 130.27881
-offset_right = 2394.0
+offset_right = 2269.0
 offset_bottom = 2178.2788
 rotation = -0.002303563
 scale = Vector2(0.05910119, 0.055581227)
@@ -77,11 +81,25 @@ texture_normal = ExtResource("5_wawo4")
 texture_pressed = ExtResource("6_56v3a")
 texture_hover = ExtResource("6_56v3a")
 
+[node name="back_level_select" type="TextureButton" parent="Panel" unique_id=1558917244]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 128.0
+offset_right = 2399.0
+offset_bottom = 2176.0
+scale = Vector2(0.058514062, 0.05581164)
+texture_normal = ExtResource("7_8bugq")
+texture_pressed = SubResource("CompressedTexture2D_wawo4")
+texture_hover = SubResource("CompressedTexture2D_wawo4")
+flip_h = true
+
 [node name="InstallSounds" parent="." unique_id=70294679 instance=ExtResource("7_irg28")]
 root_path = NodePath("..")
 
-[node name="GameOverSfx" type="AudioStreamPlayer" parent="." unique_id=1013367396]
+[node name="gameover" type="AudioStreamPlayer2D" parent="." unique_id=1780933206]
 stream = ExtResource("8_2jtsn")
+bus = &"SFX"
 
 [connection signal="pressed" from="Panel/back_menu" to="." method="_on_back_menu_pressed"]
 [connection signal="pressed" from="Panel/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/back_level_select" to="." method="_on_back_level_select_pressed"]

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://twq68cc6hd23"]
+
+[ext_resource type="Script" uid="uid://dgbh1vche163t" path="res://scripts/wheel.gd" id="1_3oduw"]
+[ext_resource type="Texture2D" uid="uid://byh4rune4qel" path="res://assets/object_sprites/pipes/wheel 1.png" id="1_gne1a"]
+[ext_resource type="Texture2D" uid="uid://h3wixeyaui8d" path="res://assets/object_sprites/pipes/wheel 2.png" id="2_3oduw"]
+[ext_resource type="Texture2D" uid="uid://cmgfi1e4hitom" path="res://assets/object_sprites/pipes/wheel3.png" id="3_jchm1"]
+[ext_resource type="Texture2D" uid="uid://c3lit16fa2wxc" path="res://assets/object_sprites/pipes/wheel4.png" id="4_hu43v"]
+[ext_resource type="Texture2D" uid="uid://civ26bhv2qjwf" path="res://assets/object_sprites/pipes/wheel 5.png" id="5_br3ud"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3at5v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gne1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_gne1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3oduw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3oduw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jchm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jchm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hu43v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hu43v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_br3ud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_br3ud")
+}],
+"loop": false,
+"name": &"spinning_wheel",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mapwv"]
+radius = 18.110771
+
+[node name="wheel" type="Area2D" unique_id=1997121584 groups=["wheel"]]
+collision_layer = 2
+script = ExtResource("1_3oduw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1941456706]
+position = Vector2(0, 2.0000002)
+scale = Vector2(0.032882877, 0.03507195)
+sprite_frames = SubResource("SpriteFrames_3at5v")
+animation = &"spinning_wheel"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1984108030]
+position = Vector2(0, 1)
+scale = Vector2(1.32047, 1.381292)
+shape = SubResource("CircleShape2D_mapwv")
+debug_color = Color(0.8477202, 0.3664911, 0.23071665, 0.41960785)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

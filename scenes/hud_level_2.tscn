@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bcmd678lo5fu7"]
+
+[ext_resource type="Script" uid="uid://bixfgpvm4ggqi" path="res://scripts/hud_level_2.gd" id="1_xeslj"]
+[ext_resource type="Texture2D" uid="uid://f86kv3l462qs" path="res://assets/object_sprites/trash.png" id="2_ppomw"]
+[ext_resource type="Texture2D" uid="uid://byh4rune4qel" path="res://assets/object_sprites/pipes/wheel 1.png" id="3_d1l5g"]
+[ext_resource type="Texture2D" uid="uid://te7hk73gex6" path="res://assets/object_sprites/pipes/new water pipe.png" id="4_tl56f"]
+[ext_resource type="Texture2D" uid="uid://dduexlpf5gilx" path="res://assets/object_sprites/drain_trash.png" id="5_dbe53"]
+
+[node name="HUD_level2" type="CanvasLayer" unique_id=1562917764 groups=["HUDui"]]
+script = ExtResource("1_xeslj")
+
+[node name="TrashCounter" type="Label" parent="." unique_id=2137871704]
+offset_left = 334.99994
+offset_top = 15.837305
+offset_right = 374.99994
+offset_bottom = 50.837303
+theme_override_font_sizes/font_size = 25
+text = "0/1"
+
+[node name="DrainCounter" type="Label" parent="." unique_id=1070551507]
+offset_left = 456.0
+offset_top = 15.837305
+offset_right = 496.0
+offset_bottom = 50.837303
+theme_override_font_sizes/font_size = 25
+text = "0/1"
+
+[node name="WheelCounter" type="Label" parent="." unique_id=207131874]
+offset_left = 335.0
+offset_top = 70.0
+offset_right = 375.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 25
+text = "0/1"
+
+[node name="trash" type="Sprite2D" parent="." unique_id=235078812]
+position = Vector2(253.49997, 32.837303)
+scale = Vector2(0.116639435, 0.11111111)
+texture = ExtResource("2_ppomw")
+region_enabled = true
+region_rect = Rect2(465.5046, 435.79984, 1226.8403, 342.3741)
+
+[node name="trash3" type="Sprite2D" parent="." unique_id=159550529]
+position = Vector2(246.99998, 85)
+scale = Vector2(0.026054539, 0.024631077)
+texture = ExtResource("3_d1l5g")
+region_rect = Rect2(465.5046, 435.79984, 1226.8403, 342.3741)
+
+[node name="round_pipe" type="Sprite2D" parent="." unique_id=1874617969]
+position = Vector2(418.91202, 35.918655)
+scale = Vector2(0.0264531, 0.026287748)
+texture = ExtResource("4_tl56f")
+
+[node name="trash2" type="Sprite2D" parent="." unique_id=266816559]
+position = Vector2(418.82645, 37.74086)
+scale = Vector2(0.019471813, 0.021139793)
+texture = ExtResource("5_dbe53")
+region_enabled = true
+region_rect = Rect2(76.7312, 4586.0815, 1831.6708, 1410.1982)

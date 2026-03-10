@@ -18,7 +18,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AADyQgAAKMIAANbCAAAswgAA1sKamSfCZmbqwgAAJMIAAPLCAAAkwgAA/sIAAATCAAAAwwAABMIAAADDmJn9QQAA7sKYmRtCAADuwgAAJEIAAMpCAAAoQgAA2kIAAChCAADaQgAAJEKame9CAAAkQpqZ/0IAAARCAAAAQ2ZmCsIAAPJCAAAgwg==")
 }]
 
-[node name="ui_heart" type="CanvasLayer" unique_id=1319346182]
+[node name="ui_heart" type="CanvasLayer" unique_id=1319346182 groups=["ui"]]
 script = ExtResource("1_aqp5m")
 
 [node name="Heart_Container" type="MeshInstance2D" parent="." unique_id=624685430]

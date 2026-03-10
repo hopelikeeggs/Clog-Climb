@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cn31qiix08rbb"]
+
+[ext_resource type="Script" path="res://assets/object_sprites/pipes/broken_pipe.gd" id="1_1mdog"]
+[ext_resource type="Texture2D" uid="uid://csor714gc8f43" path="res://assets/object_sprites/pipes/rusty_pipe.png" id="2_7olue"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vux4"]
+atlas = ExtResource("2_7olue")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvilb"]
+atlas = ExtResource("2_7olue")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxtly"]
+atlas = ExtResource("2_7olue")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si01t"]
+atlas = ExtResource("2_7olue")
+region = Rect2(5760, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ai1ju"]
+atlas = ExtResource("2_7olue")
+region = Rect2(0, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_620bi"]
+atlas = ExtResource("2_7olue")
+region = Rect2(1920, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4w6p"]
+atlas = ExtResource("2_7olue")
+region = Rect2(3840, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyagt"]
+atlas = ExtResource("2_7olue")
+region = Rect2(5760, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrxsn"]
+atlas = ExtResource("2_7olue")
+region = Rect2(0, 2160, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ui4e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vux4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvilb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxtly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si01t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ai1ju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_620bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4w6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyagt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrxsn")
+}],
+"loop": false,
+"name": &"break",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvlre"]
+size = Vector2(218, 15)
+
+[node name="broken_pipe" type="Area2D" unique_id=698139476]
+collision_layer = 2
+script = ExtResource("1_1mdog")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=656989507]
+position = Vector2(-6.999996, 25.999998)
+scale = Vector2(0.19322915, 0.12569447)
+sprite_frames = SubResource("SpriteFrames_2ui4e")
+animation = &"break"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1234409406]
+shape = SubResource("RectangleShape2D_mvlre")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

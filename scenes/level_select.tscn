@@ -25,8 +25,8 @@
 [ext_resource type="AudioStream" uid="uid://btg6v6ncsxibc" path="res://assets/music_&_SFX/level_select_music.ogg" id="21_317l6"]
 [ext_resource type="PackedScene" uid="uid://pg23r54v6h6g" path="res://scenes/install_sounds.tscn" id="22_r4hmm"]
 [ext_resource type="PackedScene" uid="uid://drtq8b4hmacq4" path="res://scenes/option.tscn" id="23_ichcy"]
-[ext_resource type="Texture2D" uid="uid://bbp0a23nq4r3m" path="res://assets/mechanics.png" id="24_povud"]
-[ext_resource type="Texture2D" uid="uid://brt8h5gq05687" path="res://assets/Info.png" id="25_6k74p"]
+[ext_resource type="PackedScene" uid="uid://dt71bacgk3d1g" path="res://scenes/info.tscn" id="26_v042j"]
+[ext_resource type="PackedScene" uid="uid://t4lfxcvcvi0x" path="res://scenes/mechanics.tscn" id="27_5ot7t"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vxici"]
 load_path = "res://.godot/imported/back_pause_pressed.png-9b6f6cbec7a115af2d8c9bc15322e1d0.ctex"
@@ -405,21 +405,8 @@ _data = {
 &"unlock": SubResource("Animation_hww6i")
 }
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_056qy"]
-_surfaces = [{
-"2d": true,
-"aabb": AABB(-185, -108, 0, 370, 267.3, 0),
-"attribute_data": PackedByteArray("mCIfP2ZmJj5LGtU+ZmYmPksa1T6amSk+GV6cPutRMD5hP5c+zcwsPv0Riz7NzCw+f8SCPmZmNj7nVn4+ZmY2PsfwYj4Vrmc+0qi2PWZmZj4JYCk9ZmZmPqggEjwzM4M+mIxUOzMzgz4AAAAApHCVPgAAAABI4bY+mIxUOpqZuT7UHzE7mpm5PgAAAAAzMx0/AAAAAD0KbT/UHzE79ih0P9QfMTvienY/3OkPPUjhfD/c6Q89ZmZ+P9iEoD1mZn4/2ISgPaNwfz/Anf49Klx9P8Cd/j3NzHw/8S1iP83MfD8wkGM/MzN/P/xPaz8zM38/5El5P83MfD9rFns/zcx8PwqMfj8AAHg/3cp/PwAAeD8AAIA/XY92PwAAgD/NzIg+4E5/P5qZhT7gTn8/pHCBPoKydz/2KGw+grJ3P3sUZj4wkGM/mplpPkWJUD+amWk+DC9OP2ZmTj4ML04/exRGPg6mSD+PwjU+DqZIPwAAMD5vMEU/AAAwPm8wRT8ehSs+GJw8PzMzMz4oMDo/MzMzPpgiHz+F6yk+"),
-"format": 34393296913,
-"index_count": 147,
-"index_data": PackedByteArray("MAAvAC4ALgAtACwALAArACoAKAAnACYAJgAlACQAJAAjACIAIgAhACAAIAAfAB4AHgAdABwAGgAZABgAFwAWABUAFQAUABMAEwASABEAEAAPAA4ADgANAAwACwAKAAkACAAHAAYABgAFAAQAAgABAAAAMAAuACwALAAqACkAKQAoACYAJgAkACIAIgAgAB4AHgAcABsAGgAYABcAFwAVABMAEwARABAAEAAOAAwACwAJAAgACAAGAAQAAwACAAAAMQAwACwAKQAmACIAIgAeABsAGgAXABMAEwAQAAwACAAEAAMAAwAAADIAMQAsACkAKQAiABsAGwAaABMAEwAMAAsACAADADIAMgAxACkAKQAbABMAEwALAAgACAAyACkAKQATAAgA"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 51,
-"vertex_data": PackedByteArray("AAA0QgAA2MIAAPjBAADYwgAA+MEAANbCAACQws3M0cJmZpfCAADUwgAAqcIAANTCAAC1wgAAzsIzM7rCAADOwgAAzsIzM6/CAAAYwwAAsMIzsynDAACwwjOzNcMAAJzCzcw3wwAAnMIAADnDMzOFwgAAOcPMzDbCM7M4wwAAMMIAADjDAAAwwgAAOcMAABJCAAA5w8xMCEMAADjDNDMRQwAAOMOaGRRDAAAsw5oZHEMAACzDAAAeQwAAHMMAAB5DAAAcw8xMH0MAAAvDNLMcQwAAC8MAABxDZuYNQwAAHENm5g9DAAAfQ5oZG0MAAB9DzEwvQwAAHENm5jFDAAAcQ2bmNkMAABZDNLM4QwAAFkMAADlDNDMUQwAAOUMAAJXCAAA4QwAAmcIAADhDMzOewgAALUNmZqzCAAAtQzMzsMJm5g9DAACuwszM6EIAAK7CAADiQgAAv8IAAOJCMzPEwgAA0kJmZs7CAADSQgAA0sIAAMhCAADSwgAAyELNzNTCNDOvQgAA0MI0M6hCAADQwgAANELNzNXC")
-}]
-
 [node name="level_select" type="Node2D" unique_id=48309254]
+process_mode = 3
 script = ExtResource("1_0wyvj")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=2133679548]
@@ -745,21 +732,15 @@ anchor_bottom = 0.5
 offset_left = 0.0
 offset_right = 0.0
 
-[node name="mechanics" type="MeshInstance2D" parent="ui_canvaslayer" unique_id=519343024]
-process_mode = 3
+[node name="info" parent="ui_canvaslayer" unique_id=619991805 instance=ExtResource("26_v042j")]
 visible = false
-position = Vector2(571, 295)
-scale = Vector2(1.8243243, 1.5534697)
-mesh = SubResource("ArrayMesh_056qy")
-texture = ExtResource("24_povud")
 
-[node name="info" type="MeshInstance2D" parent="ui_canvaslayer" unique_id=489617895]
-process_mode = 3
+[node name="mechanics" parent="ui_canvaslayer" unique_id=1178775812 instance=ExtResource("27_5ot7t")]
 visible = false
-position = Vector2(549.00006, 277)
-scale = Vector2(2.162162, 2.3307145)
-mesh = SubResource("ArrayMesh_056qy")
-texture = ExtResource("25_6k74p")
+offset_left = -9.0
+offset_top = 38.0
+offset_right = -9.0
+offset_bottom = 38.0
 
 [connection signal="pressed" from="Camera2D/button_manager/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Camera2D/button_manager/option" to="." method="_on_option_pressed"]

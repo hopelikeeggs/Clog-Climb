@@ -21,6 +21,15 @@
 [ext_resource type="Texture2D" uid="uid://crh3g5r47o2b8" path="res://assets/player_sprites/aling chona/run/6.png" id="19_2k00x"]
 [ext_resource type="Texture2D" uid="uid://37exnsfo7ink" path="res://assets/player_sprites/aling chona/run/7.png" id="20_1ee7n"]
 [ext_resource type="Texture2D" uid="uid://bvu4ewiw8ecxt" path="res://assets/object_sprites/Point.png" id="21_5chif"]
+[ext_resource type="Texture2D" uid="uid://be0kigql5dalo" path="res://assets/player_sprites/aling chona/spinning wheel/Untitled111_20260122003357.png" id="21_6qbc0"]
+[ext_resource type="Texture2D" uid="uid://dw7xbied2v0cc" path="res://assets/player_sprites/aling chona/spinning wheel/Untitled111_20260123135314.png" id="22_ivowq"]
+[ext_resource type="Texture2D" uid="uid://21wny28lnrx3" path="res://assets/player_sprites/aling chona/spinning wheel/Untitled111_20260123135419.png" id="23_mtdcx"]
+[ext_resource type="Texture2D" uid="uid://c3vfwvuvhxy8b" path="res://assets/player_sprites/aling chona/spinning wheel/Untitled111_20260123135519.png" id="24_cwedx"]
+[ext_resource type="Texture2D" uid="uid://bdawacgk8k1np" path="res://assets/player_sprites/aling chona/spinning wheel/Untitled111_20260123135651.png" id="25_olrau"]
+[ext_resource type="AudioStream" uid="uid://cm2dfakwkj4o1" path="res://assets/music_&_SFX/Running footsteps.ogg" id="27_olrau"]
+[ext_resource type="AudioStream" uid="uid://b5aasyx6y5eni" path="res://assets/music_&_SFX/jump.ogg" id="28_geur2"]
+[ext_resource type="AudioStream" uid="uid://cfndn7uawkex0" path="res://assets/music_&_SFX/picking_up_trash.ogg" id="29_nus7k"]
+[ext_resource type="AudioStream" uid="uid://ct7lcdcwb0tjv" path="res://assets/music_&_SFX/spinning_wheel.ogg" id="30_7888i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3r4q8"]
 animations = [{
@@ -108,6 +117,26 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_6qbc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ivowq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_mtdcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_cwedx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_olrau")
+}],
+"loop": true,
+"name": &"spin_wheel",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t8awf"]
@@ -115,7 +144,7 @@ radius = 6.0
 height = 112.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yg3x1"]
-size = Vector2(76.875, 84.0625)
+size = Vector2(46.21875, 84.0625)
 
 [node name="along_chona" type="CharacterBody2D" unique_id=1785045198 groups=["player"]]
 collision_mask = 2
@@ -125,7 +154,7 @@ script = ExtResource("1_jeb2m")
 position = Vector2(10.000001, -12)
 scale = Vector2(0.05084229, 0.06689453)
 sprite_frames = SubResource("SpriteFrames_3r4q8")
-animation = &"drain_cleaning"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1812112191]
@@ -141,19 +170,32 @@ texture = ExtResource("21_5chif")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=722219150]
-position = Vector2(0, 13.03125)
+position = Vector2(1, 15)
 shape = SubResource("RectangleShape2D_yg3x1")
 debug_color = Color(1.8049032e-07, 0.1455844, 0.17680845, 0.41960785)
 
-[node name="runsound" type="AudioStreamPlayer2D" parent="." unique_id=1939581120]
+[node name="runsound" type="AudioStreamPlayer2D" parent="." unique_id=282633167]
+stream = ExtResource("27_olrau")
+bus = &"SFX"
 
-[node name="jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=688580678]
+[node name="jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=439218038]
+stream = ExtResource("28_geur2")
+bus = &"SFX"
 
-[node name="pickupsound" type="AudioStreamPlayer2D" parent="." unique_id=596302756]
+[node name="pickupsound" type="AudioStreamPlayer2D" parent="." unique_id=1926204771]
+stream = ExtResource("29_nus7k")
+bus = &"SFX"
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1601630725]
+[node name="wheelsound" type="AudioStreamPlayer2D" parent="." unique_id=763315451]
+stream = ExtResource("30_7888i")
+volume_db = 24.0
+bus = &"SFX"
+
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=2144225684]
+position = Vector2(1, 1)
 zoom = Vector2(1.88, 1.99)
-limit_left = -693
-limit_top = -401
-limit_right = 621
+limit_left = -809
+limit_top = -541
+limit_right = 765
 limit_bottom = 306
+editor_draw_limits = true

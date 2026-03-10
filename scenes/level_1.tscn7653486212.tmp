@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cvr1o7cpi134n" path="res://assets/object_sprites/game background_.jpg" id="1_014kd"]
 [ext_resource type="Texture2D" uid="uid://dwbyses1i4t3c" path="res://assets/object_sprites/pipes/pipe_bg2.png" id="2_e3sih"]
 [ext_resource type="PackedScene" uid="uid://bxcve3hakdj80" path="res://scenes/ladder_area_2d.tscn" id="2_fcfvj"]
-[ext_resource type="AudioStream" uid="uid://dpysg27ha4uey" path="res://assets/music_&_SFX/game_music.ogg" id="2_iw4em"]
 [ext_resource type="PackedScene" uid="uid://cwhtbwu3llh3b" path="res://scenes/platform_1.tscn" id="2_rus8k"]
 [ext_resource type="Texture2D" uid="uid://cu2n6ff3sxttx" path="res://assets/object_sprites/pipes/pipe_bg3.png" id="3_2y5yt"]
 [ext_resource type="PackedScene" uid="uid://bo52o5tfsa32x" path="res://scenes/platform_2.tscn" id="3_5xbjy"]
@@ -49,8 +48,7 @@ _surfaces = [{
 
 [node name="level1" type="Node2D" unique_id=150462360]
 script = ExtResource("1_2cbcq")
-amount_to_show = 1
-amount_drain_to_show = 1
+amount_to_show = 2
 
 [node name="background" type="Node2D" parent="." unique_id=1525331335]
 
@@ -99,13 +97,13 @@ scale = Vector2(0.39648435, 0.5214844)
 texture = ExtResource("4_2os1m")
 
 [node name="pipe_where_water?" type="Sprite2D" parent="background" unique_id=1601665207]
-position = Vector2(693, -332)
+position = Vector2(548.00006, -318)
 scale = Vector2(0.04883334, 0.0442)
 texture = ExtResource("5_7gny6")
 flip_h = true
 
 [node name="tunnel" type="MeshInstance2D" parent="background" unique_id=955765783]
-position = Vector2(-713, 227)
+position = Vector2(-600, 228.99998)
 scale = Vector2(0.074666664, 0.18319999)
 mesh = SubResource("ArrayMesh_6dial")
 texture = ExtResource("6_2aecg")
@@ -132,6 +130,9 @@ texture = ExtResource("8_mbb35")
 
 [node name="platforms" type="Node2D" parent="." unique_id=760304441]
 
+[node name="ladder_area2D" parent="platforms" unique_id=1012942828 instance=ExtResource("2_fcfvj")]
+position = Vector2(-394, -322)
+
 [node name="platform1" parent="platforms" unique_id=1328984356 instance=ExtResource("2_rus8k")]
 position = Vector2(-27.5, -90.99997)
 collision_layer = 2
@@ -156,70 +157,63 @@ collision_layer = 2
 position = Vector2(-397.5, -161.99997)
 collision_layer = 2
 
-[node name="trash_drains" type="Node2D" parent="." unique_id=1484305839]
-
-[node name="drain" parent="trash_drains" unique_id=1790790947 instance=ExtResource("9_2os1m")]
+[node name="drain" parent="." unique_id=1790790947 instance=ExtResource("9_2os1m")]
 position = Vector2(-331.5, -67.99997)
 
-[node name="drain2" parent="trash_drains" unique_id=932804379 instance=ExtResource("9_2os1m")]
+[node name="drain2" parent="." unique_id=932804379 instance=ExtResource("9_2os1m")]
 position = Vector2(395.5, 61.00003)
 
-[node name="drain3" parent="trash_drains" unique_id=198665529 instance=ExtResource("9_2os1m")]
+[node name="drain3" parent="." unique_id=198665529 instance=ExtResource("9_2os1m")]
 position = Vector2(368, -133)
 
-[node name="drain4" parent="trash_drains" unique_id=449650645 instance=ExtResource("9_2os1m")]
+[node name="drain4" parent="." unique_id=449650645 instance=ExtResource("9_2os1m")]
 position = Vector2(-30, -183)
 
-[node name="trash" parent="trash_drains" unique_id=1931076463 instance=ExtResource("9_2y5yt")]
+[node name="trash" parent="." unique_id=1931076463 instance=ExtResource("9_2y5yt")]
 position = Vector2(30.5, 79.00003)
 
-[node name="trash3" parent="trash_drains" unique_id=587421250 instance=ExtResource("9_2y5yt")]
+[node name="trash3" parent="." unique_id=587421250 instance=ExtResource("9_2y5yt")]
 position = Vector2(-27.5, -106.99997)
 
-[node name="trash4" parent="trash_drains" unique_id=1692467003 instance=ExtResource("9_2y5yt")]
+[node name="trash4" parent="." unique_id=1692467003 instance=ExtResource("9_2y5yt")]
 position = Vector2(369.5, -47.99997)
-
-[node name="ladder_area2D" parent="." unique_id=1012942828 instance=ExtResource("2_fcfvj")]
-position = Vector2(-394, -322)
 
 [node name="mang_juan" parent="." unique_id=737011571 instance=ExtResource("6_pa8r4")]
 position = Vector2(-393.5, -233.99997)
 
-[node name="Camera2D3" type="Camera2D" parent="mang_juan" unique_id=1797948055]
-position = Vector2(1, 1)
+[node name="Camera2D2" type="Camera2D" parent="mang_juan" unique_id=230307371]
+position = Vector2(1, -1)
 zoom = Vector2(1.88, 1.99)
-limit_left = -809
-limit_top = -400
-limit_right = 765
+limit_left = -693
+limit_top = -401
+limit_right = 621
 limit_bottom = 306
 editor_draw_limits = true
 
 [node name="flood" parent="." unique_id=1419378107 instance=ExtResource("12_go7sj")]
-position = Vector2(-6, 126)
+position = Vector2(-6, -134)
 
-[node name="Statiscbodys" type="Node2D" parent="." unique_id=1617388186]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Statiscbodys" unique_id=2006253237]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2006253237]
 position = Vector2(0, 269)
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Statiscbodys/StaticBody2D" unique_id=1606381822]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1606381822]
 shape = SubResource("WorldBoundaryShape2D_7gny6")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Statiscbodys" unique_id=363050426]
-position = Vector2(755.00006, 0)
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=363050426]
+position = Vector2(614.99994, 0)
 rotation = -1.5736241
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Statiscbodys/StaticBody2D2" unique_id=250182360]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=250182360]
 shape = SubResource("WorldBoundaryShape2D_7gny6")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Statiscbodys" unique_id=641430775]
-position = Vector2(-801, 1)
-rotation = 1.5718483
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=641430775]
+position = Vector2(-680.00006, -5.9604645e-08)
+rotation = -4.711337
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Statiscbodys/StaticBody2D3" unique_id=1568691466]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1568691466]
 shape = SubResource("WorldBoundaryShape2D_7gny6")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=689975213]
@@ -233,12 +227,6 @@ offset_left = 1.0
 offset_top = 2.0
 offset_right = -1.0
 offset_bottom = 4.0
-
-[node name="GameMusic" type="AudioStreamPlayer" parent="CanvasLayer/option_container" unique_id=1056706426]
-stream = ExtResource("2_iw4em")
-autoplay = true
-bus = &"Music"
-parameters/looping = true
 
 [node name="game_completed" parent="CanvasLayer" unique_id=580554472 instance=ExtResource("23_mbb35")]
 visible = false
@@ -280,7 +268,6 @@ scale = Vector2(0.02924886, 0.030296365)
 texture_normal = ExtResource("16_x2xxo")
 texture_pressed = ExtResource("17_2cbcq")
 texture_hover = ExtResource("17_2cbcq")
-metadata/_edit_use_anchors_ = true
 
 [node name="option_light" type="PointLight2D" parent="CanvasLayer/option" unique_id=1310383012]
 position = Vector2(1064.623, 1127.3335)
@@ -297,7 +284,6 @@ scale = Vector2(0.02924886, 0.030296365)
 texture_normal = ExtResource("23_hnsmf")
 texture_pressed = ExtResource("24_nossa")
 texture_hover = ExtResource("24_nossa")
-metadata/_edit_use_anchors_ = true
 
 [node name="option_light" type="PointLight2D" parent="CanvasLayer/paused" unique_id=317354959]
 position = Vector2(1064.623, 1127.3335)

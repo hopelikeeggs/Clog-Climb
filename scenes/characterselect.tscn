@@ -86,7 +86,7 @@
 [ext_resource type="PackedScene" uid="uid://drtq8b4hmacq4" path="res://scenes/option.tscn" id="84_j8im3"]
 [ext_resource type="AudioStream" uid="uid://cyr8hollsqwon" path="res://assets/music_&_SFX/mus_battle1.ogg" id="84_u1oo3"]
 [ext_resource type="PackedScene" uid="uid://t4lfxcvcvi0x" path="res://scenes/mechanics.tscn" id="85_j8im3"]
-[ext_resource type="Texture2D" uid="uid://brt8h5gq05687" path="res://assets/Info.png" id="86_lj4rg"]
+[ext_resource type="PackedScene" uid="uid://dt71bacgk3d1g" path="res://scenes/info.tscn" id="87_lj4rg"]
 [ext_resource type="PackedScene" uid="uid://pg23r54v6h6g" path="res://scenes/install_sounds.tscn" id="88_lj4rg"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xv80s"]
@@ -488,21 +488,8 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AADcwgAACMIAANzCNDP/wQAA7MI0M8fBAADswmhmksEAAOLC0MxEwQAA4sIAACjBAADUwpiZCcEAANTCAACAQAAA1sIAAIBAAADcwgAAAACame3CAAAAAAAA/sIwMwNBAAD+wmhmhkEAAO7CaGbGQQAA7sLQzNRBAADWwgAA7EEAANbCmJn9QZqZtcIAANhBzcyvwgAA2EHNzJ7CoJlZQQAAksKYmaVBAACSwjAzs0EAAHzCaGbSQQAAfMIAAOBBNDM1wgAA4EEAAPDBmJmBQQAA8MEwM49BAADAwTAzt0EAAMDBAADIQWBmlkAAAMhBoJlJQQAAmEEAAHBBMDOnQQAAcEEAALhBNDMjQgAAuEHMzC5CAACgQTQzOUIAALBBzMxeQgAAsEGYmXdCmJmFQWZmhkIAALBBzMyXQgAAsEGamadCAABQQTQztEIAAKBBzMzBQgAAoEEAANRC0MwcQQAA1EKYmQHBZmbfQgAAUMGameRCAABQwQAA4kJoZrLBAADiQpiZycEAANRCmJnpwQAA1EIAAPjBmpmiQgAA+MHMzJNCaGbGwQAAjkJoZtLBAACOQpiZ4cE0MylCNDPPwQAAHEJoZtrBAAAcQgAA6MEwM5NBAADowTAzK0HMzLzBwMxsQAAA6MEAAMDBAADowQAA4MEAAMDBAADwwQAAwMEAAPDBmJmBwQAADMJoZq7BAAAMwjQzu8EAADTCNDPbwQAANMIAAOjBZmZywgAA6MEAAIzCNDO7wQAAjsIAAMzBAACOwszM4MEAAJrCZmYAwgAAmsIAAAjC")
 }]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_056qy"]
-_surfaces = [{
-"2d": true,
-"aabb": AABB(-185, -108, 0, 370, 267.3, 0),
-"attribute_data": PackedByteArray("mCIfP2ZmJj5LGtU+ZmYmPksa1T6amSk+GV6cPutRMD5hP5c+zcwsPv0Riz7NzCw+f8SCPmZmNj7nVn4+ZmY2PsfwYj4Vrmc+0qi2PWZmZj4JYCk9ZmZmPqggEjwzM4M+mIxUOzMzgz4AAAAApHCVPgAAAABI4bY+mIxUOpqZuT7UHzE7mpm5PgAAAAAzMx0/AAAAAD0KbT/UHzE79ih0P9QfMTvienY/3OkPPUjhfD/c6Q89ZmZ+P9iEoD1mZn4/2ISgPaNwfz/Anf49Klx9P8Cd/j3NzHw/8S1iP83MfD8wkGM/MzN/P/xPaz8zM38/5El5P83MfD9rFns/zcx8PwqMfj8AAHg/3cp/PwAAeD8AAIA/XY92PwAAgD/NzIg+4E5/P5qZhT7gTn8/pHCBPoKydz/2KGw+grJ3P3sUZj4wkGM/mplpPkWJUD+amWk+DC9OP2ZmTj4ML04/exRGPg6mSD+PwjU+DqZIPwAAMD5vMEU/AAAwPm8wRT8ehSs+GJw8PzMzMz4oMDo/MzMzPpgiHz+F6yk+"),
-"format": 34393296913,
-"index_count": 147,
-"index_data": PackedByteArray("MAAvAC4ALgAtACwALAArACoAKAAnACYAJgAlACQAJAAjACIAIgAhACAAIAAfAB4AHgAdABwAGgAZABgAFwAWABUAFQAUABMAEwASABEAEAAPAA4ADgANAAwACwAKAAkACAAHAAYABgAFAAQAAgABAAAAMAAuACwALAAqACkAKQAoACYAJgAkACIAIgAgAB4AHgAcABsAGgAYABcAFwAVABMAEwARABAAEAAOAAwACwAJAAgACAAGAAQAAwACAAAAMQAwACwAKQAmACIAIgAeABsAGgAXABMAEwAQAAwACAAEAAMAAwAAADIAMQAsACkAKQAiABsAGwAaABMAEwAMAAsACAADADIAMgAxACkAKQAbABMAEwALAAgACAAyACkAKQATAAgA"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 51,
-"vertex_data": PackedByteArray("AAA0QgAA2MIAAPjBAADYwgAA+MEAANbCAACQws3M0cJmZpfCAADUwgAAqcIAANTCAAC1wgAAzsIzM7rCAADOwgAAzsIzM6/CAAAYwwAAsMIzsynDAACwwjOzNcMAAJzCzcw3wwAAnMIAADnDMzOFwgAAOcPMzDbCM7M4wwAAMMIAADjDAAAwwgAAOcMAABJCAAA5w8xMCEMAADjDNDMRQwAAOMOaGRRDAAAsw5oZHEMAACzDAAAeQwAAHMMAAB5DAAAcw8xMH0MAAAvDNLMcQwAAC8MAABxDZuYNQwAAHENm5g9DAAAfQ5oZG0MAAB9DzEwvQwAAHENm5jFDAAAcQ2bmNkMAABZDNLM4QwAAFkMAADlDNDMUQwAAOUMAAJXCAAA4QwAAmcIAADhDMzOewgAALUNmZqzCAAAtQzMzsMJm5g9DAACuwszM6EIAAK7CAADiQgAAv8IAAOJCMzPEwgAA0kJmZs7CAADSQgAA0sIAAMhCAADSwgAAyELNzNTCNDOvQgAA0MI0M6hCAADQwgAANELNzNXC")
-}]
-
 [node name="characterselect" type="Node2D" unique_id=851864016]
+process_mode = 3
 script = ExtResource("1_meklt")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=449648639]
@@ -711,20 +698,15 @@ anchor_bottom = 0.5
 offset_left = 0.0
 offset_right = 0.0
 
-[node name="info" type="MeshInstance2D" parent="CanvasLayer" unique_id=1979739561]
-process_mode = 3
-visible = false
-position = Vector2(549.00006, 277)
-scale = Vector2(2.162162, 2.3307145)
-mesh = SubResource("ArrayMesh_056qy")
-texture = ExtResource("86_lj4rg")
-
 [node name="mechanics" parent="CanvasLayer" unique_id=1178775812 instance=ExtResource("85_j8im3")]
 visible = false
-offset_left = 190.0
-offset_top = 88.0
-offset_right = -177.0
-offset_bottom = -22.0
+offset_left = -11.0
+offset_top = 62.0
+offset_right = -11.0
+offset_bottom = 62.0
+
+[node name="info" parent="CanvasLayer" unique_id=619991805 instance=ExtResource("87_lj4rg")]
+visible = false
 
 [node name="InstallSounds" parent="." unique_id=70294679 instance=ExtResource("88_lj4rg")]
 root_path = NodePath("..")

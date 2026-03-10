@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bjy0de2uqofgq"]
+
+[ext_resource type="Texture2D" uid="uid://fq87hlkuu6r5" path="res://assets/object_sprites/Untitled83.png" id="1_8tarp"]
+[ext_resource type="Texture2D" uid="uid://bvu4ewiw8ecxt" path="res://assets/object_sprites/Point.png" id="4_v8r61"]
+[ext_resource type="Texture2D" uid="uid://bd0vp7l12uu7e" path="res://assets/player_sprites/mang juan/climbing/mang juan climbing 1.png" id="6_s3yag"]
+[ext_resource type="Texture2D" uid="uid://djfgop1axbmw6" path="res://assets/player_sprites/mang juan/climbing/mang juan climbing 2.png" id="7_01hyt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m8qw0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_s3yag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_01hyt")
+}],
+"loop": true,
+"name": &"mang_juan_climb",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_rlw22"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_07nd6"]
+resource_name = "up"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mang_juan:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-4, 81.999985), Vector2(-4, -77.999985)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aassj"]
+_data = {
+&"RESET": SubResource("Animation_rlw22"),
+&"up": SubResource("Animation_07nd6")
+}
+
+[node name="ladder_climb_mang_juan" type="Node2D" unique_id=939984276]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1047830943]
+scale = Vector2(0.04, 0.08)
+texture = ExtResource("1_8tarp")
+
+[node name="mang_juan" type="AnimatedSprite2D" parent="." unique_id=910238284]
+position = Vector2(-4, 81.999985)
+scale = Vector2(0.036865234, 0.036682125)
+sprite_frames = SubResource("SpriteFrames_m8qw0")
+animation = &"mang_juan_climb"
+autoplay = "mang_juan_climb"
+frame_progress = 0.4649747
+
+[node name="PointLight2D" type="PointLight2D" parent="mang_juan" unique_id=1423462545]
+position = Vector2(0.5, -2.0000305)
+scale = Vector2(2.1347656, 1.8281249)
+color = Color(0.80696934, 0.79277533, 0.7908814, 1)
+texture = ExtResource("4_v8r61")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=449647627]
+libraries/ = SubResource("AnimationLibrary_aassj")

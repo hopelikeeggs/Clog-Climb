@@ -18,7 +18,16 @@
 [ext_resource type="Texture2D" uid="uid://bia5iftjx4oee" path="res://assets/player_sprites/princess/run/Untitled126_20260124162844.png" id="17_6ejdu"]
 [ext_resource type="Texture2D" uid="uid://dfnfdetov24lb" path="res://assets/player_sprites/princess/run/Untitled126_20260124163130.png" id="18_234iw"]
 [ext_resource type="Texture2D" uid="uid://qf2oy368tl2i" path="res://assets/player_sprites/princess/run/Untitled126_20260124164340.png" id="19_cg08e"]
+[ext_resource type="Texture2D" uid="uid://bjappe0e67ylt" path="res://assets/player_sprites/princess/spinning wheel_/Untitled127_20260124122046.png" id="19_ou5fo"]
+[ext_resource type="Texture2D" uid="uid://bcrn1hb1p2b5p" path="res://assets/player_sprites/princess/spinning wheel_/Untitled127_20260124122059.png" id="20_8u1ty"]
 [ext_resource type="Texture2D" uid="uid://bvu4ewiw8ecxt" path="res://assets/object_sprites/Point.png" id="20_yuv6r"]
+[ext_resource type="Texture2D" uid="uid://dsqxpynoxpwh4" path="res://assets/player_sprites/princess/spinning wheel_/Untitled127_20260124122127.png" id="21_2av4j"]
+[ext_resource type="Texture2D" uid="uid://cmh4uvca3ptxt" path="res://assets/player_sprites/princess/spinning wheel_/Untitled127_20260124122156.png" id="22_oqxee"]
+[ext_resource type="Texture2D" uid="uid://husynfir72ex" path="res://assets/player_sprites/princess/spinning wheel_/Untitled127_20260124122214.png" id="23_vwif6"]
+[ext_resource type="AudioStream" uid="uid://cm2dfakwkj4o1" path="res://assets/music_&_SFX/Running footsteps.ogg" id="25_vwif6"]
+[ext_resource type="AudioStream" uid="uid://b5aasyx6y5eni" path="res://assets/music_&_SFX/jump.ogg" id="26_4x5md"]
+[ext_resource type="AudioStream" uid="uid://cfndn7uawkex0" path="res://assets/music_&_SFX/picking_up_trash.ogg" id="27_lf617"]
+[ext_resource type="AudioStream" uid="uid://ct7lcdcwb0tjv" path="res://assets/music_&_SFX/spinning_wheel.ogg" id="28_km4pk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jwccx"]
 animations = [{
@@ -100,6 +109,26 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_ou5fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_8u1ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_2av4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_oqxee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vwif6")
+}],
+"loop": true,
+"name": &"spin_wheel",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t8awf"]
@@ -107,7 +136,7 @@ radius = 7.0
 height = 104.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yg3x1"]
-size = Vector2(75.75, 82.5625)
+size = Vector2(41.875, 82.5625)
 
 [node name="princess" type="CharacterBody2D" unique_id=1785045198 groups=["player"]]
 collision_mask = 2
@@ -117,18 +146,12 @@ script = ExtResource("1_xkhgp")
 position = Vector2(2, -8.000002)
 scale = Vector2(0.041046143, 0.059570313)
 sprite_frames = SubResource("SpriteFrames_jwccx")
-animation = &"drain_cleaning"
+animation = &"spin_wheel"
 autoplay = "idle"
+frame_progress = 0.95074904
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1812112191]
 shape = SubResource("CapsuleShape2D_t8awf")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1579252535]
-zoom = Vector2(1.88, 1.99)
-limit_left = -693
-limit_top = -401
-limit_right = 621
-limit_bottom = 306
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=790434138]
 position = Vector2(0.5, -2.0000305)
@@ -140,12 +163,32 @@ texture = ExtResource("20_yuv6r")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=722219150]
-position = Vector2(0, 10.28125)
+position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_yg3x1")
 debug_color = Color(1.8049032e-07, 0.1455844, 0.17680845, 0.41960785)
 
-[node name="runsound" type="AudioStreamPlayer2D" parent="." unique_id=1939581120]
+[node name="runsound" type="AudioStreamPlayer2D" parent="." unique_id=63112198]
+stream = ExtResource("25_vwif6")
+bus = &"SFX"
 
-[node name="jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=688580678]
+[node name="jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=1924333128]
+stream = ExtResource("26_4x5md")
+bus = &"SFX"
 
-[node name="pickupsound" type="AudioStreamPlayer2D" parent="." unique_id=596302756]
+[node name="pickupsound" type="AudioStreamPlayer2D" parent="." unique_id=1980802388]
+stream = ExtResource("27_lf617")
+bus = &"SFX"
+
+[node name="wheelsound" type="AudioStreamPlayer2D" parent="." unique_id=359257174]
+stream = ExtResource("28_km4pk")
+volume_db = 24.0
+bus = &"SFX"
+
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=1033363303]
+position = Vector2(1, 1)
+zoom = Vector2(1.88, 1.99)
+limit_left = -809
+limit_top = -541
+limit_right = 765
+limit_bottom = 306
+editor_draw_limits = true

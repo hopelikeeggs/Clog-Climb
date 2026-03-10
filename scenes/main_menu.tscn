@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://d12eyltmhjxuh"]
+[gd_scene format=3 uid="uid://d12eyltmhjxuh"]
 
 [ext_resource type="Script" uid="uid://b5jkblatdt4lt" path="res://scripts/main_menu.gd" id="1_7b55j"]
 [ext_resource type="Texture2D" uid="uid://s14dtl41ffwu" path="res://assets/object_sprites/home background_.jpg" id="1_ekxnf"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bis3hbdo738mu" path="res://assets/Button_sprite/new_buttons/start_pressed.png" id="3_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://3rvhdv3oy0gh" path="res://assets/Button_sprite/new_buttons/start.png" id="4_jk1qb"]
 [ext_resource type="Texture2D" uid="uid://jn7rsc1rv1rv" path="res://assets/Button_sprite/new_buttons/option_pressed.png" id="5_5dd4i"]
+[ext_resource type="PackedScene" uid="uid://t4lfxcvcvi0x" path="res://scenes/mechanics.tscn" id="5_8egab"]
+[ext_resource type="PackedScene" uid="uid://dt71bacgk3d1g" path="res://scenes/info.tscn" id="5_gw5y6"]
 [ext_resource type="Texture2D" uid="uid://bqm8ebhhsirwc" path="res://assets/Button_sprite/new_buttons/option.png" id="6_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://b1nts33sv4dfm" path="res://assets/Button_sprite/new_buttons/quit_pressed.png" id="7_flqon"]
 [ext_resource type="Texture2D" uid="uid://di46tiupth50n" path="res://assets/Button_sprite/new_buttons/quit.png" id="8_rcqid"]
@@ -16,24 +18,8 @@
 [ext_resource type="AudioStream" uid="uid://dvq60ms41csqn" path="res://assets/music_&_SFX/Istambay.mp3" id="14_5pajh"]
 [ext_resource type="VideoStream" uid="uid://b01ufgb5ttvrw" path="res://assets/Gam3Bo1.ogv" id="15_j7ex8"]
 [ext_resource type="PackedScene" uid="uid://drtq8b4hmacq4" path="res://scenes/option.tscn" id="16_a8gd2"]
-[ext_resource type="Texture2D" uid="uid://bbp0a23nq4r3m" path="res://assets/mechanics.png" id="17_hstxw"]
-[ext_resource type="Texture2D" uid="uid://brt8h5gq05687" path="res://assets/Info.png" id="18_8egab"]
 [ext_resource type="PackedScene" uid="uid://3wfojlvvqqwq" path="res://scenes/quit_validation.tscn" id="19_8egab"]
 [ext_resource type="PackedScene" uid="uid://pg23r54v6h6g" path="res://scenes/install_sounds.tscn" id="19_hstxw"]
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_gw5y6"]
-_surfaces = [{
-"2d": true,
-"aabb": AABB(-185, -108, 0, 370, 267.3, 0),
-"attribute_data": PackedByteArray("mCIfP2ZmJj5LGtU+ZmYmPksa1T6amSk+GV6cPutRMD5hP5c+zcwsPv0Riz7NzCw+f8SCPmZmNj7nVn4+ZmY2PsfwYj4Vrmc+0qi2PWZmZj4JYCk9ZmZmPqggEjwzM4M+mIxUOzMzgz4AAAAApHCVPgAAAABI4bY+mIxUOpqZuT7UHzE7mpm5PgAAAAAzMx0/AAAAAD0KbT/UHzE79ih0P9QfMTvienY/3OkPPUjhfD/c6Q89ZmZ+P9iEoD1mZn4/2ISgPaNwfz/Anf49Klx9P8Cd/j3NzHw/8S1iP83MfD8wkGM/MzN/P/xPaz8zM38/5El5P83MfD9rFns/zcx8PwqMfj8AAHg/3cp/PwAAeD8AAIA/XY92PwAAgD/NzIg+4E5/P5qZhT7gTn8/pHCBPoKydz/2KGw+grJ3P3sUZj4wkGM/mplpPkWJUD+amWk+DC9OP2ZmTj4ML04/exRGPg6mSD+PwjU+DqZIPwAAMD5vMEU/AAAwPm8wRT8ehSs+GJw8PzMzMz4oMDo/MzMzPpgiHz+F6yk+"),
-"format": 34393296913,
-"index_count": 147,
-"index_data": PackedByteArray("MAAvAC4ALgAtACwALAArACoAKAAnACYAJgAlACQAJAAjACIAIgAhACAAIAAfAB4AHgAdABwAGgAZABgAFwAWABUAFQAUABMAEwASABEAEAAPAA4ADgANAAwACwAKAAkACAAHAAYABgAFAAQAAgABAAAAMAAuACwALAAqACkAKQAoACYAJgAkACIAIgAgAB4AHgAcABsAGgAYABcAFwAVABMAEwARABAAEAAOAAwACwAJAAgACAAGAAQAAwACAAAAMQAwACwAKQAmACIAIgAeABsAGgAXABMAEwAQAAwACAAEAAMAAwAAADIAMQAsACkAKQAiABsAGwAaABMAEwAMAAsACAADADIAMgAxACkAKQAbABMAEwALAAgACAAyACkAKQATAAgA"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 51,
-"vertex_data": PackedByteArray("AAA0QgAA2MIAAPjBAADYwgAA+MEAANbCAACQws3M0cJmZpfCAADUwgAAqcIAANTCAAC1wgAAzsIzM7rCAADOwgAAzsIzM6/CAAAYwwAAsMIzsynDAACwwjOzNcMAAJzCzcw3wwAAnMIAADnDMzOFwgAAOcPMzDbCM7M4wwAAMMIAADjDAAAwwgAAOcMAABJCAAA5w8xMCEMAADjDNDMRQwAAOMOaGRRDAAAsw5oZHEMAACzDAAAeQwAAHMMAAB5DAAAcw8xMH0MAAAvDNLMcQwAAC8MAABxDZuYNQwAAHENm5g9DAAAfQ5oZG0MAAB9DzEwvQwAAHENm5jFDAAAcQ2bmNkMAABZDNLM4QwAAFkMAADlDNDMUQwAAOUMAAJXCAAA4QwAAmcIAADhDMzOewgAALUNmZqzCAAAtQzMzsMJm5g9DAACuwszM6EIAAK7CAADiQgAAv8IAAOJCMzPEwgAA0kJmZs7CAADSQgAA0sIAAMhCAADSwgAAyELNzNTCNDOvQgAA0MI0M6hCAADQwgAANELNzNXC")
-}]
 
 [sub_resource type="Animation" id="Animation_wu84c"]
 length = 0.001
@@ -76,22 +62,6 @@ anchor_bottom = 0.5
 offset_left = 0.0
 offset_right = 0.0
 
-[node name="mechanics" type="MeshInstance2D" parent="CanvasLayer" unique_id=64267346]
-process_mode = 3
-visible = false
-position = Vector2(571, 295)
-scale = Vector2(1.8243243, 1.5534697)
-mesh = SubResource("ArrayMesh_gw5y6")
-texture = ExtResource("17_hstxw")
-
-[node name="info" type="MeshInstance2D" parent="CanvasLayer" unique_id=1111032844]
-process_mode = 3
-visible = false
-position = Vector2(549.00006, 277)
-scale = Vector2(2.162162, 2.3307145)
-mesh = SubResource("ArrayMesh_gw5y6")
-texture = ExtResource("18_8egab")
-
 [node name="quit_validation" parent="CanvasLayer" unique_id=1526320644 instance=ExtResource("19_8egab")]
 visible = false
 anchors_preset = 8
@@ -99,6 +69,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+
+[node name="mechanics" parent="CanvasLayer" unique_id=1178775812 instance=ExtResource("5_8egab")]
+visible = false
+offset_left = 1.0
+offset_top = 54.0
+offset_right = 1.0
+offset_bottom = 54.0
+
+[node name="info" parent="CanvasLayer" unique_id=619991805 instance=ExtResource("5_gw5y6")]
+visible = false
 
 [node name="BG" type="Sprite2D" parent="." unique_id=2114105119]
 position = Vector2(577.00006, 326.5)

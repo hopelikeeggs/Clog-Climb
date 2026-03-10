@@ -7,7 +7,7 @@ var selected_character = ""
 
 @onready var option: = $CanvasLayer/option
 @onready var question: = $CanvasLayer/mechanics
-@onready var info: = $CanvasLayer/info
+@onready var info: =	$CanvasLayer/info
 
 func _ready():
 	next_button.disabled = true
@@ -33,8 +33,12 @@ func show_selected_character(character_name: String):
 	# Store in Global (PackedScene)
 	PlayerData.selected_character_scene = load("res://scenes/characters/" + character_name + ".tscn")
 	PlayerData.selected_character_name = character_name
+	
+	PlayerData.selected_ladder_scene = load("res://scenes/ladder_climb_" + character_name + ".tscn")
+	
 
 	next_button.disabled = false
+	
 
 # BUTTON SIGNALS
 func _on_mang_juan_pressed():

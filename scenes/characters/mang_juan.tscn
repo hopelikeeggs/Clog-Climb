@@ -3,6 +3,15 @@
 [ext_resource type="Script" uid="uid://cbwx6sreqjolj" path="res://scripts/mang_juan.gd" id="1_8iul5"]
 [ext_resource type="Texture2D" uid="uid://dsljpwigrjox0" path="res://assets/player_sprites/mang juan/Mang Juan.png" id="2_41iod"]
 [ext_resource type="Texture2D" uid="uid://bvu4ewiw8ecxt" path="res://assets/object_sprites/Point.png" id="3_41iod"]
+[ext_resource type="Texture2D" uid="uid://cl4o837af2wrj" path="res://assets/player_sprites/mang juan/spinning wheel/Untitled101_20260118101424.png" id="3_gw0rp"]
+[ext_resource type="Texture2D" uid="uid://dk6fdt06pmabx" path="res://assets/player_sprites/mang juan/spinning wheel/Untitled101_20260118101522.png" id="4_qtjb8"]
+[ext_resource type="Texture2D" uid="uid://ciie226x3i7yj" path="res://assets/player_sprites/mang juan/spinning wheel/Untitled101_20260118101714.png" id="5_b06bm"]
+[ext_resource type="Texture2D" uid="uid://c24ftsoqbicnf" path="res://assets/player_sprites/mang juan/spinning wheel/Untitled101_20260118101855.png" id="6_tjavb"]
+[ext_resource type="Texture2D" uid="uid://ca22a0w1re71p" path="res://assets/player_sprites/mang juan/spinning wheel/Untitled101_20260118102453.png" id="7_ptoll"]
+[ext_resource type="AudioStream" uid="uid://cm2dfakwkj4o1" path="res://assets/music_&_SFX/Running footsteps.ogg" id="9_tjavb"]
+[ext_resource type="AudioStream" uid="uid://b5aasyx6y5eni" path="res://assets/music_&_SFX/jump.ogg" id="10_ptoll"]
+[ext_resource type="AudioStream" uid="uid://cfndn7uawkex0" path="res://assets/music_&_SFX/picking_up_trash.ogg" id="11_w1bpo"]
+[ext_resource type="AudioStream" uid="uid://ct7lcdcwb0tjv" path="res://assets/music_&_SFX/spinning_wheel.ogg" id="12_ptoll"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u2xwt"]
 atlas = ExtResource("2_41iod")
@@ -177,6 +186,26 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gw0rp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qtjb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b06bm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tjavb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ptoll")
+}],
+"loop": true,
+"name": &"spin_wheel",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kr47q"]
@@ -184,7 +213,7 @@ radius = 9.0
 height = 120.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lfri"]
-size = Vector2(58.375, 91.625)
+size = Vector2(43.1875, 91.625)
 
 [node name="mang_juan" type="CharacterBody2D" unique_id=737011571 groups=["player"]]
 collision_mask = 2
@@ -194,7 +223,7 @@ script = ExtResource("1_8iul5")
 position = Vector2(4, -5)
 scale = Vector2(0.38012615, 0.3820224)
 sprite_frames = SubResource("SpriteFrames_xmhd0")
-animation = &"drain_cleaning"
+animation = &"spin_wheel"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1834212130]
@@ -210,19 +239,32 @@ texture = ExtResource("3_41iod")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1432968940]
-position = Vector2(0, 14)
+position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_0lfri")
 debug_color = Color(1.8049032e-07, 0.1455844, 0.17680845, 0.41960785)
 
 [node name="runsound" type="AudioStreamPlayer2D" parent="." unique_id=331643522]
+stream = ExtResource("9_tjavb")
+bus = &"SFX"
 
 [node name="jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=1931921204]
+stream = ExtResource("10_ptoll")
+bus = &"SFX"
 
 [node name="pickupsound" type="AudioStreamPlayer2D" parent="." unique_id=180947416]
+stream = ExtResource("11_w1bpo")
+bus = &"SFX"
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=154854838]
+[node name="wheelsound" type="AudioStreamPlayer2D" parent="." unique_id=731486988]
+stream = ExtResource("12_ptoll")
+volume_db = 24.0
+bus = &"SFX"
+
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=1879539856]
+position = Vector2(1, 1)
 zoom = Vector2(1.88, 1.99)
-limit_left = -693
-limit_top = -401
-limit_right = 621
+limit_left = -809
+limit_top = -541
+limit_right = 765
 limit_bottom = 306
+editor_draw_limits = true

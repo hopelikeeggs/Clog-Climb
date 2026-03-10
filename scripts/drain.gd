@@ -14,4 +14,5 @@ func clean_drain():
 
 func _on_animated_sprite_2d_animation_finished():
 	if anim.animation == "drain_cleaning_up":
+		get_tree().current_scene.drain_cleaned()
 		queue_free()

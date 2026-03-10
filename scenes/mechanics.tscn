@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://0ypt4uceacyj" path="res://assets/Button_sprite/new_buttons/back_pause.png" id="3_v81a4"]
 [ext_resource type="Texture2D" uid="uid://dnrce5sc5tf3r" path="res://assets/Button_sprite/new_buttons/back_pause_pressed.png" id="4_wedaa"]
 [ext_resource type="Texture2D" uid="uid://wmg8x6y62kab" path="res://assets/container_sprites/Untitled183_20260303114613.png" id="5_mqan6"]
+[ext_resource type="Texture2D" uid="uid://6srk6gsrdexs" path="res://assets/Button_sprite/new_buttons/Exit_button.png" id="6_rjf3g"]
+[ext_resource type="Texture2D" uid="uid://b3oxw22foqyfd" path="res://assets/Button_sprite/new_buttons/Exit_button_pressed.png" id="7_q6h0w"]
 
 [node name="mechanics" type="Control" unique_id=1178775812]
 layout_mode = 3
@@ -61,5 +63,18 @@ texture_pressed = ExtResource("4_wedaa")
 texture_hover = ExtResource("4_wedaa")
 flip_h = true
 
+[node name="exit" type="TextureButton" parent="Panel" unique_id=1608581403]
+layout_mode = 0
+offset_left = 546.9999
+offset_top = -47.0
+offset_right = 2595.0
+offset_bottom = 2001.0
+scale = Vector2(0.02949355, 0.028781777)
+toggle_mode = true
+texture_normal = ExtResource("6_rjf3g")
+texture_pressed = ExtResource("7_q6h0w")
+texture_hover = ExtResource("7_q6h0w")
+
 [connection signal="pressed" from="Panel/mechanics/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Panel/mechanics2/next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Panel/exit" to="." method="_on_exit_pressed"]

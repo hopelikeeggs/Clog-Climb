@@ -21,7 +21,18 @@
 [ext_resource type="Texture2D" uid="uid://dakge0pmnvu7m" path="res://assets/player_sprites/jobert/run/Untitled106_Restored2_20260118185432.png" id="19_kgpsi"]
 [ext_resource type="Texture2D" uid="uid://bpe825au3xswx" path="res://assets/player_sprites/jobert/run/Untitled106_Restored2_20260118191808.png" id="20_l12kn"]
 [ext_resource type="Texture2D" uid="uid://bkc8c5rhjtmfl" path="res://assets/player_sprites/jobert/run/Untitled106_Restored2_20260118191824.png" id="21_ofm1f"]
+[ext_resource type="Texture2D" uid="uid://c3rg0xplbyvek" path="res://assets/player_sprites/jobert/spinning wheel/1.png" id="22_cxvwt"]
 [ext_resource type="Texture2D" uid="uid://bvu4ewiw8ecxt" path="res://assets/object_sprites/Point.png" id="22_iy4bf"]
+[ext_resource type="Texture2D" uid="uid://c7m7xu3pjp3e0" path="res://assets/player_sprites/jobert/spinning wheel/2.png" id="23_jigsh"]
+[ext_resource type="Texture2D" uid="uid://6myxog5nt5bm" path="res://assets/player_sprites/jobert/spinning wheel/3.png" id="24_c7wdk"]
+[ext_resource type="Texture2D" uid="uid://cc35w3atjlq" path="res://assets/player_sprites/jobert/spinning wheel/4.png" id="25_h31tp"]
+[ext_resource type="Texture2D" uid="uid://ca7yfcuj35l5t" path="res://assets/player_sprites/jobert/spinning wheel/5.png" id="26_03rqj"]
+[ext_resource type="Texture2D" uid="uid://dfqcmntuwwmvp" path="res://assets/player_sprites/jobert/spinning wheel/6.png" id="27_0w5uu"]
+[ext_resource type="Texture2D" uid="uid://djxrv1xgl7cn1" path="res://assets/player_sprites/jobert/spinning wheel/7.png" id="28_pq2go"]
+[ext_resource type="AudioStream" uid="uid://cm2dfakwkj4o1" path="res://assets/music_&_SFX/Running footsteps.ogg" id="30_03rqj"]
+[ext_resource type="AudioStream" uid="uid://b5aasyx6y5eni" path="res://assets/music_&_SFX/jump.ogg" id="31_0w5uu"]
+[ext_resource type="AudioStream" uid="uid://cfndn7uawkex0" path="res://assets/music_&_SFX/picking_up_trash.ogg" id="32_pq2go"]
+[ext_resource type="AudioStream" uid="uid://ct7lcdcwb0tjv" path="res://assets/music_&_SFX/spinning_wheel.ogg" id="33_p8lbo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8ghsx"]
 animations = [{
@@ -112,6 +123,32 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_cxvwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_jigsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_c7wdk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_h31tp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_03rqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_0w5uu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_pq2go")
+}],
+"loop": true,
+"name": &"spin_wheel",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t8awf"]
@@ -119,7 +156,7 @@ radius = 7.0
 height = 114.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yg3x1"]
-size = Vector2(75.75, 94.8125)
+size = Vector2(44.9375, 94.8125)
 
 [node name="jobert" type="CharacterBody2D" unique_id=1785045198 groups=["player"]]
 collision_mask = 2
@@ -129,8 +166,9 @@ script = ExtResource("1_sxv3q")
 position = Vector2(7, 1)
 scale = Vector2(0.050354008, 0.06640625)
 sprite_frames = SubResource("SpriteFrames_8ghsx")
-animation = &"drain_cleaning"
+animation = &"spin_wheel"
 autoplay = "idle"
+frame_progress = 0.19823228
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1812112191]
 position = Vector2(0, 11)
@@ -146,19 +184,32 @@ texture = ExtResource("22_iy4bf")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=722219150]
-position = Vector2(0, 20.40625)
+position = Vector2(0, 20)
 shape = SubResource("RectangleShape2D_yg3x1")
 debug_color = Color(1.8049032e-07, 0.1455844, 0.17680845, 0.41960785)
 
-[node name="runsound" type="AudioStreamPlayer2D" parent="." unique_id=1939581120]
+[node name="runsound" type="AudioStreamPlayer2D" parent="." unique_id=745468134]
+stream = ExtResource("30_03rqj")
+bus = &"SFX"
 
-[node name="jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=688580678]
+[node name="jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=1757420131]
+stream = ExtResource("31_0w5uu")
+bus = &"SFX"
 
-[node name="pickupsound" type="AudioStreamPlayer2D" parent="." unique_id=596302756]
+[node name="pickupsound" type="AudioStreamPlayer2D" parent="." unique_id=1127362252]
+stream = ExtResource("32_pq2go")
+bus = &"SFX"
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=287735277]
+[node name="wheelsound" type="AudioStreamPlayer2D" parent="." unique_id=45686342]
+stream = ExtResource("33_p8lbo")
+volume_db = 24.0
+bus = &"SFX"
+
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=99307548]
+position = Vector2(1, 1)
 zoom = Vector2(1.88, 1.99)
-limit_left = -693
-limit_top = -401
-limit_right = 621
+limit_left = -809
+limit_top = -541
+limit_right = 765
 limit_bottom = 306
+editor_draw_limits = true
